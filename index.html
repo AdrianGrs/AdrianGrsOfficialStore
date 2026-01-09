@@ -131,11 +131,13 @@
     /* Store */
     .content{padding:18px}
     .storeHeader{
-      display:flex;align-items:flex-end;justify-content:space-between;gap:14px;
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:14px;
       margin-bottom:14px;
     }
     .storeTitle{margin:0;font-size:18px;font-weight:900;letter-spacing:-.01em}
-    .storeNote{margin:0;color:rgba(255,255,255,.68);font-size:12px;line-height:1.4}
 
     .chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 16px 0}
     .chip{
@@ -198,9 +200,10 @@
     .btn:hover{transform:translateY(-1px);border-color:rgba(255,255,255,.22);background:rgba(255,255,255,.10)}
     .btn span{opacity:.9}
 
+    /* ✅ grid auto-fit = nu mai rămâne spațiu gol când sunt puține carduri */
     .grid{
       display:grid;
-      grid-template-columns:repeat(3, minmax(0,1fr));
+      grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
       gap:14px;
     }
     .card{
@@ -238,13 +241,6 @@
     }
     .go{font-weight:900;font-size:12px;opacity:.9}
 
-    .sectionTitle{
-      margin:18px 0 10px 0;
-      font-size:14px;
-      font-weight:900;
-      color:rgba(255,255,255,.86);
-    }
-
     .footer{
       padding:14px 18px 18px;
       border-top:1px solid rgba(255,255,255,.08);
@@ -264,16 +260,12 @@
     }
 
     /* MOBILE */
-    @media (max-width:900px){
-      .grid{grid-template-columns:repeat(2, minmax(0,1fr))}
-    }
     @media (max-width:720px){
       .header{grid-template-columns:86px 1fr}
       .avatar{width:78px;height:78px;border-radius:22px}
       .name{font-size:22px}
       .socialGrid{grid-template-columns:1fr}
       .content{padding:14px}
-      .grid{grid-template-columns:1fr}
       .featured{flex-direction:column;align-items:flex-start}
       .btn{width:100%}
     }
@@ -291,7 +283,7 @@
 
         <div class="title">
           <h1 class="name">AdrianGrsOfficial</h1>
-          <p class="sub">Mini store afiliat: oferte selectate + linkuri oficiale</p>
+          <p class="sub">Oferte selectate + linkuri oficiale</p>
 
           <div class="socialGrid" aria-label="Social">
             <a class="socialCard" href="https://www.tiktok.com/@adriangrs1" target="_blank" rel="noopener" data-ga="social" data-label="TikTok">
@@ -338,22 +330,20 @@
               <div class="scRight">↗</div>
             </a>
           </div>
-
         </div>
       </div>
 
       <div class="content">
         <div class="storeHeader">
           <h2 class="storeTitle">Oferte recomandate</h2>
-          <p class="storeNote">Apasă pe produs → Link2 îl transformă automat în link de afiliere (fără costuri extra pentru tine).</p>
         </div>
 
         <!-- Featured (editezi tu linkul + textul) -->
         <div class="featured">
           <div class="featuredLeft">
             <div class="badge">🔥 Oferta zilei</div>
-            <p class="featuredH">Gaming: reduceri mari la console & jocuri</p>
-            <p class="featuredP">Intră rapid pe ofertă. Stocurile se schimbă des.</p>
+            <p class="featuredH">Gaming: reduceri la console & jocuri</p>
+            <p class="featuredP">Intră pe ofertă și vezi prețurile actuale.</p>
           </div>
           <a class="btn" href="https://jocurinoi.ro" target="_blank" rel="nofollow noopener" data-ga="product" data-label="Featured|JocuriNoi">
             Vezi oferta <span>↗</span>
@@ -370,6 +360,7 @@
           <button class="chip" type="button" data-filter="watches">⌚ Ceasuri</button>
         </div>
 
+        <!-- GRID PRINCIPAL (aici îmi dai linkuri și îți pun eu produsele) -->
         <div class="grid" id="grid">
 
           <!-- GAMING -->
@@ -379,7 +370,7 @@
             </div>
             <div class="body">
               <p class="h3">JocuriNoi — Console & jocuri</p>
-              <p class="meta">Oferte la PS5 / Xbox / Nintendo + jocuri noi.</p>
+              <p class="meta">Oferte la PS5 / Xbox / Nintendo + jocuri.</p>
               <div class="ctaRow">
                 <span class="pill">🎮 Gaming</span>
                 <span class="go">Vezi oferta ↗</span>
@@ -476,56 +467,10 @@
           </a>
 
         </div>
-
-        <p class="sectionTitle">Bannere rapide</p>
-        <div class="grid">
-          <a class="card" href="https://jocurinoi.ro" target="_blank" rel="nofollow noopener" data-cat="gaming" data-ga="banner" data-label="Banner|JocuriNoi">
-            <div class="thumb">
-              <img src="https://img.2performant.com/system/paperclip/banner_pictures/pics/264115/original/264115.jpeg" alt="JocuriNoi banner">
-            </div>
-            <div class="body">
-              <p class="h3">JocuriNoi — Banner</p>
-              <p class="meta">Click rapid pe ofertă.</p>
-              <div class="ctaRow">
-                <span class="pill">🎮</span>
-                <span class="go">Deschide ↗</span>
-              </div>
-            </div>
-          </a>
-
-          <a class="card" href="https://refurbished.ro" target="_blank" rel="nofollow noopener" data-cat="apple" data-ga="banner" data-label="Banner|Refurbished">
-            <div class="thumb">
-              <img src="https://img.2performant.com/system/paperclip/banner_pictures/pics/246928/original/246928.png" alt="Refurbished banner">
-            </div>
-            <div class="body">
-              <p class="h3">refurbished.ro — Banner</p>
-              <p class="meta">Apple refurbished — intră pe ofertă.</p>
-              <div class="ctaRow">
-                <span class="pill">🍎</span>
-                <span class="go">Deschide ↗</span>
-              </div>
-            </div>
-          </a>
-
-          <a class="card" href="https://otter.ro" target="_blank" rel="nofollow noopener" data-cat="accessories" data-ga="banner" data-label="Banner|Otter">
-            <div class="thumb">
-              <img src="https://img.2performant.com/system/paperclip/banner_pictures/pics/263966/original/263966.png" alt="Otter banner">
-            </div>
-            <div class="body">
-              <p class="h3">Otter — Banner</p>
-              <p class="meta">Huse & accesorii.</p>
-              <div class="ctaRow">
-                <span class="pill">📱</span>
-                <span class="go">Deschide ↗</span>
-              </div>
-            </div>
-          </a>
-        </div>
       </div>
 
       <div class="footer">
-        ⚠️ Disclaimer: Linkuri de afiliere. Pot primi comision fără costuri suplimentare pentru tine.<br>
-        Pagină creată pentru trafic din TikTok/Instagram/YouTube.
+        ⚠️ Disclaimer: Linkuri de afiliere. Pot primi comision fără costuri suplimentare pentru tine.
       </div>
 
     </div>
@@ -575,7 +520,7 @@
     });
   </script>
 
-  <!-- ✅ 2Performant Link2 (IMPORTANT: pune aici data-id-ul tău REAL din "Copy Link2 Embed Code") -->
+  <!-- ✅ 2Performant Link2 (pune aici data-id-ul tău REAL din "Copy Link2 Embed Code") -->
   <script
     src="https://cdn.2performant.com/l2/link2.js"
     id="linkTwoPerformant"
