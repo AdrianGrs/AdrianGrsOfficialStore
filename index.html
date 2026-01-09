@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>AdrianGrsOfficial — Mini Store</title>
-  <meta name="description" content="Mini store afiliat cu produse selectate." />
+  <meta name="description" content="Mini store afiliat cu produse selectate + linkuri oficiale." />
   <meta name="theme-color" content="#070911" />
 
   <!-- ✅ GA4 -->
@@ -36,7 +36,56 @@
       color:var(--text);
     }
     .wrap{max-width:1200px;margin:0 auto;padding:24px}
-    h1{margin:0 0 16px 0;font-size:28px;font-weight:900;letter-spacing:-.01em}
+
+    /* ===== HEADER PROFIL ===== */
+    .profile{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      padding:18px;
+      margin-bottom:22px;
+      border-radius:22px;
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.12);
+    }
+    .avatar{
+      width:84px;height:84px;
+      border-radius:22px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.15);
+      background:#000;
+      flex:0 0 auto;
+    }
+    .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+    .profileText{display:flex;flex-direction:column;gap:6px;min-width:0}
+    .profileText h2{margin:0;font-size:22px;font-weight:900;letter-spacing:-.01em}
+    .profileText p{margin:0;font-size:13px;color:rgba(255,255,255,.70);line-height:1.35}
+    .socials{
+      margin-left:auto;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .socials a{
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:900;
+      text-decoration:none;
+      color:var(--text);
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(0,0,0,.25);
+      transition:transform .12s ease, border-color .12s ease, background .12s ease;
+      white-space:nowrap;
+    }
+    .socials a:hover{
+      transform:translateY(-1px);
+      border-color:#22d3ee;
+      background:rgba(255,255,255,.08);
+    }
+
+    h1{margin:0 0 16px 0;font-size:26px;font-weight:900;letter-spacing:-.01em}
 
     .filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
     .filters button{
@@ -47,7 +96,7 @@
       border-radius:999px;
       cursor:pointer;
       transition:transform .12s ease, border-color .12s ease, background .12s ease;
-      font-weight:800;
+      font-weight:900;
       font-size:12px;
     }
     .filters button:hover{transform:translateY(-1px);border-color:rgba(255,255,255,.22)}
@@ -58,7 +107,6 @@
       grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
       gap:16px;
     }
-
     .card{
       background:var(--card);
       border:1px solid var(--stroke);
@@ -72,10 +120,14 @@
       min-height:250px;
     }
     .card:hover{border-color:#22d3ee; transform:translateY(-1px); background:rgba(255,255,255,.08)}
-
-    .thumb{width:100%;aspect-ratio:16/9;overflow:hidden;background:#000;border-bottom:1px solid rgba(255,255,255,.10)}
+    .thumb{
+      width:100%;
+      aspect-ratio:16/9;
+      overflow:hidden;
+      background:#000;
+      border-bottom:1px solid rgba(255,255,255,.10);
+    }
     .thumb img{width:100%;height:100%;object-fit:cover;display:block}
-
     .body{padding:14px;display:flex;flex-direction:column;gap:8px;flex:1}
     .h3{margin:0;font-size:15px;font-weight:900;line-height:1.25}
     .meta{margin:0;font-size:13px;color:var(--muted);line-height:1.35}
@@ -90,12 +142,38 @@
       font-size:12px;
       line-height:1.4;
     }
+
+    @media(max-width:720px){
+      .wrap{padding:16px}
+      .profile{flex-direction:column;align-items:flex-start}
+      .socials{margin-left:0;justify-content:flex-start}
+    }
   </style>
 </head>
 
 <body>
   <div class="wrap">
-    <h1>🛒 Mini Store — Oferte recomandate</h1>
+
+    <!-- ✅ Header cu poza + social links -->
+    <div class="profile">
+      <div class="avatar">
+        <img src="avatar.jpg" alt="AdrianGrsOfficial">
+      </div>
+
+      <div class="profileText">
+        <h2>AdrianGrsOfficial</h2>
+        <p>Oferte verificate • Mini store afiliat</p>
+      </div>
+
+      <div class="socials">
+        <a href="https://www.tiktok.com/@adriangrs1" target="_blank" rel="noopener" data-ga="social" data-label="TikTok">TikTok</a>
+        <a href="https://www.youtube.com/@AdrianGrsOfficial" target="_blank" rel="noopener" data-ga="social" data-label="YouTube">YouTube</a>
+        <a href="https://www.instagram.com/adriangrsofficial/" target="_blank" rel="noopener" data-ga="social" data-label="Instagram">Instagram</a>
+        <a href="https://www.facebook.com/adriangrspodcastclips" target="_blank" rel="noopener" data-ga="social" data-label="Facebook">Facebook</a>
+      </div>
+    </div>
+
+    <h1>🛒 Oferte recomandate</h1>
 
     <div class="filters" role="tablist" aria-label="Categorii">
       <button class="active" data-filter="all">Toate</button>
@@ -261,7 +339,7 @@
       <a class="card" data-cat="shoes" data-name="Pantofi sport Pepe Jeans (alb)" data-brand="otter.ro"
          href="https://www.otter.ro/pantofi-sport-pepe-jeans-albi-ls60021-din-material-textil-si-piele-naturala"
          target="_blank" rel="nofollow noopener">
-        <div class="thumb"><img loading="lazy" alt="Pepe Jeans"
+        <div class="thumb"><img loading="lazy" alt="Sneakers Pepe Jeans"
           src="https://cdn.otter.ro/media/catalog/product/cache/0426d00bd1554e475c7fe0a52342803c/1/4/14f85ba95dad48d0fab34e2745eb94599d30e133b38eccc5d0f614eed7dd0b51.jpeg"></div>
         <div class="body">
           <p class="h3">Sneakers Pepe Jeans (alb)</p>
@@ -273,7 +351,7 @@
       <a class="card" data-cat="shoes" data-name="Pantofi sport Skechers (alb/negru)" data-brand="otter.ro"
          href="https://www.otter.ro/pantofi-sport-skechers-alb-negru-185060-din-piele-ecologica-kzls47111dk1850609"
          target="_blank" rel="nofollow noopener">
-        <div class="thumb"><img loading="lazy" alt="Skechers"
+        <div class="thumb"><img loading="lazy" alt="Sneakers Skechers"
           src="https://cdn.otter.ro/media/catalog/product/cache/0426d00bd1554e475c7fe0a52342803c/2/9/29d86f73026fb13c82e08353930eb5d4cebe4c321edbf15b387f3739f7c52062.jpeg"></div>
         <div class="body">
           <p class="h3">Sneakers Skechers (alb/negru)</p>
@@ -282,7 +360,6 @@
         </div>
       </a>
 
-      <!-- listă promoții: folosim o poză generică (femei) -->
       <a class="card" data-cat="shoes" data-name="Promo sneakers femei (95–244)" data-brand="otter.ro"
          href="https://www.otter.ro/femei/incaltaminte/pantofi/sport/sneakers/pentru/femei/promotii/da/pret/95-244"
          target="_blank" rel="nofollow noopener">
@@ -290,7 +367,7 @@
           src="https://cdn.otter.ro/media/catalog/product/cache/0426d00bd1554e475c7fe0a52342803c/1/4/14f85ba95dad48d0fab34e2745eb94599d30e133b38eccc5d0f614eed7dd0b51.jpeg"></div>
         <div class="body">
           <p class="h3">Promo Sneakers (Femei)</p>
-          <p class="meta">Listă promoții • preț 95–244</p>
+          <p class="meta">Listă promoții • 95–244</p>
           <div class="cta"><span class="tag">👟 Încălțăminte</span><span class="go">Vezi ↗</span></div>
         </div>
       </a>
@@ -298,7 +375,7 @@
       <a class="card" data-cat="shoes" data-name="Pantofi sport Gryxx (maro)" data-brand="otter.ro"
          href="https://www.otter.ro/pantofi-sport-gryxx-maro-82691-din-material-textil"
          target="_blank" rel="nofollow noopener">
-        <div class="thumb"><img loading="lazy" alt="Gryxx maro"
+        <div class="thumb"><img loading="lazy" alt="Pantofi sport Gryxx"
           src="https://cdn.otter.ro/media/catalog/product/cache/0426d00bd1554e475c7fe0a52342803c/b/e/be85464c2423ca89b5e3bfb46140ed282d88100f76f207ace5fdf25042e6094f.jpeg"></div>
         <div class="body">
           <p class="h3">Pantofi sport Gryxx (maro)</p>
@@ -310,7 +387,7 @@
       <a class="card" data-cat="shoes" data-name="Pantofi sport Nhot (alb)" data-brand="otter.ro"
          href="https://www.otter.ro/pantofi-sport-nhot-albi-a386-din-material-textil"
          target="_blank" rel="nofollow noopener">
-        <div class="thumb"><img loading="lazy" alt="Nhot alb"
+        <div class="thumb"><img loading="lazy" alt="Pantofi sport Nhot"
           src="https://cdn.otter.ro/media/catalog/product/cache/0426d00bd1554e475c7fe0a52342803c/3/9/398b18709168860b90e8f20d68b3d713e9b9d41367dcaea4ec97b99d436bb3af.jpeg"></div>
         <div class="body">
           <p class="h3">Pantofi sport Nhot (alb)</p>
@@ -459,7 +536,7 @@
         c.style.display = (filter === "all" || c.dataset.cat === filter) ? "" : "none";
       });
 
-      // GA4: filter_select + view_item_list
+      // GA4: filtre
       if (typeof gtag === "function") {
         gtag('event', 'filter_select', { filter_name: filter });
         gtag('event', 'view_item_list', { item_list_name: filter === 'all' ? 'All' : `Category: ${filter}` });
@@ -474,8 +551,17 @@
       });
     });
 
-    // ✅ Product click tracking
+    // ✅ click pe produs + click pe social
     document.addEventListener('click', (e) => {
+      const social = e.target.closest('[data-ga="social"]');
+      if (social && typeof gtag === "function") {
+        gtag('event', 'click_social', {
+          social_network: social.getAttribute('data-label') || 'Social',
+          link_url: social.href
+        });
+        return;
+      }
+
       const a = e.target.closest('a.card');
       if(!a) return;
 
