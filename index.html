@@ -3,24 +3,15 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AdrianGrsOfficial — Oferte</title>
-  <meta name="description" content="Mini store afiliat: oferte selectate + linkuri oficiale AdrianGrsOfficial." />
+  <title>AdrianGrsOfficial — Mini Store</title>
+  <meta name="description" content="Mini store afiliat cu produse selectate." />
   <meta name="theme-color" content="#070911" />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="AdrianGrsOfficial — Oferte" />
-  <meta property="og:description" content="Mini store afiliat: oferte selectate + linkuri oficiale." />
-  <meta property="og:url" content="https://adriangrs.github.io/AdrianGrsOfficial/" />
-  <meta property="og:image" content="https://adriangrs.github.io/AdrianGrsOfficial/avatar.jpg" />
-  <meta property="og:type" content="website" />
-
-  <!-- GA4 -->
+  <!-- ✅ GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGGRWDXT26"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-  </script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGGRWDXT26"></script>
-  <script>
     gtag('js', new Date());
     gtag('config', 'G-JGGRWDXT26', { anonymize_ip: true });
   </script>
@@ -28,607 +19,496 @@
   <style>
     :root{
       --bg:#070911;
-      --stroke:rgba(255,255,255,.10);
       --text:#f2f4ff;
-      --muted:rgba(255,255,255,.70);
-      --shadow:0 24px 80px rgba(0,0,0,.55);
+      --muted:rgba(255,255,255,.72);
+      --card:rgba(255,255,255,.06);
+      --stroke:rgba(255,255,255,.12);
     }
     *{box-sizing:border-box}
-    html,body{height:100%}
     body{
       margin:0;
       font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial;
-      color:var(--text);
       background:
-        radial-gradient(900px 520px at 25% 0%, rgba(168,85,247,.35), transparent 60%),
-        radial-gradient(900px 520px at 80% 20%, rgba(34,211,238,.22), transparent 62%),
-        radial-gradient(900px 520px at 50% 85%, rgba(99,102,241,.16), transparent 60%),
+        radial-gradient(900px 520px at 25% 0%, rgba(168,85,247,.30), transparent 60%),
+        radial-gradient(900px 520px at 80% 20%, rgba(34,211,238,.18), transparent 62%),
+        radial-gradient(900px 520px at 50% 85%, rgba(99,102,241,.12), transparent 60%),
         var(--bg);
-      overflow-x:hidden;
+      color:var(--text);
     }
-    a{color:inherit}
-    .wrap{max-width:1100px;margin:0 auto;padding:22px 16px 44px}
-    .shell{
-      border:1px solid var(--stroke);
-      border-radius:32px;
-      background:linear-gradient(135deg, rgba(168,85,247,.10), rgba(34,211,238,.06));
-      box-shadow:var(--shadow);
-      backdrop-filter:blur(12px);
-      overflow:hidden;
-    }
+    .wrap{max-width:1200px;margin:0 auto;padding:24px}
+    h1{margin:0 0 16px 0;font-size:28px;font-weight:900;letter-spacing:-.01em}
 
-    /* HEADER */
-    .header{
-      display:grid;
-      grid-template-columns:120px 1fr;
-      gap:18px;
-      align-items:center;
-      padding:22px;
-      border-bottom:1px solid rgba(255,255,255,.08);
-      background:rgba(0,0,0,.10);
-    }
-    .avatar{
-      width:108px;height:108px;
-      border-radius:26px;
-      overflow:hidden;
-      border:1px solid rgba(255,255,255,.10);
-      background:#000;
-      box-shadow:0 18px 60px rgba(0,0,0,.55);
-    }
-    .avatar img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(100%);transform:scale(1.02)}
-    .title{display:flex;flex-direction:column;gap:10px;min-width:0}
-    .name{font-size:28px;font-weight:900;letter-spacing:-.02em;margin:0}
-    .sub{margin:0;color:rgba(255,255,255,.70);font-size:14px;line-height:1.4}
-
-    .socialGrid{
-      display:grid;
-      grid-template-columns:repeat(2, minmax(0,1fr));
-      gap:12px;
-      margin-top:6px;
-    }
-    .socialCard{
-      display:flex;align-items:center;justify-content:space-between;
-      gap:14px;
-      padding:14px 16px;
-      border-radius:22px;
-      border:1px solid rgba(255,255,255,.12);
-      background:rgba(255,255,255,.06);
-      text-decoration:none;
-      transition:transform .12s ease, border-color .12s ease, background .12s ease;
-      min-height:74px;
-    }
-    .socialCard:hover{transform:translateY(-1px);border-color:rgba(255,255,255,.22);background:rgba(255,255,255,.08)}
-    .scLeft{display:flex;gap:12px;align-items:center;min-width:0}
-    .scIcon{width:46px;height:46px;border-radius:16px;border:1px solid rgba(255,255,255,.14);background:rgba(0,0,0,.30);display:grid;place-items:center}
-    .scIcon img{width:26px;height:26px;object-fit:contain;display:block}
-    .scText{min-width:0}
-    .scTitle{font-size:15px;font-weight:900;margin:0 0 2px 0}
-    .scHandle{margin:0;color:rgba(255,255,255,.75);font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-    .scRight{width:38px;height:38px;border-radius:14px;border:1px solid rgba(255,255,255,.14);background:rgba(0,0,0,.22);display:grid;place-items:center}
-
-    /* STORE */
-    .content{padding:18px}
-    .storeHeader{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;margin-bottom:14px}
-    .storeTitle{margin:0;font-size:18px;font-weight:900;letter-spacing:-.01em}
-
-    .featured{
-      border:1px solid rgba(255,255,255,.14);
-      background:
-        radial-gradient(800px 220px at 20% 10%, rgba(168,85,247,.22), transparent 55%),
-        radial-gradient(800px 220px at 80% 90%, rgba(34,211,238,.14), transparent 55%),
-        rgba(0,0,0,.22);
-      border-radius:24px;
-      padding:16px;
-      display:flex;
-      gap:16px;
-      align-items:center;
-      justify-content:space-between;
-      margin-bottom:16px;
-      box-shadow:0 18px 60px rgba(0,0,0,.35);
-    }
-    .badge{
-      display:inline-flex;align-items:center;gap:8px;
-      padding:7px 10px;border-radius:999px;
-      border:1px solid rgba(255,255,255,.12);
-      background:rgba(0,0,0,.22);
-      font-size:12px;color:rgba(255,255,255,.84);
-      margin-bottom:10px;
-      width:fit-content;
-    }
-    .featuredH{margin:0;font-size:18px;font-weight:900}
-    .featuredP{margin:6px 0 0 0;color:rgba(255,255,255,.72);font-size:13px;line-height:1.35}
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;
-      gap:10px;
-      padding:12px 14px;
-      border-radius:16px;
-      border:1px solid rgba(255,255,255,.14);
+    .filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+    .filters button{
       background:rgba(255,255,255,.08);
-      text-decoration:none;
-      font-weight:900;
-      font-size:13px;
-      white-space:nowrap;
-      transition:transform .12s ease, background .12s ease, border-color .12s ease;
-    }
-    .btn:hover{transform:translateY(-1px);border-color:rgba(255,255,255,.22);background:rgba(255,255,255,.10)}
-
-    .chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 16px 0}
-    .chip{
-      border:1px solid rgba(255,255,255,.12);
-      background:rgba(0,0,0,.20);
-      color:rgba(255,255,255,.84);
-      padding:8px 10px;
+      border:1px solid var(--stroke);
+      color:var(--text);
+      padding:8px 12px;
       border-radius:999px;
-      font-size:12px;
       cursor:pointer;
-      user-select:none;
       transition:transform .12s ease, border-color .12s ease, background .12s ease;
+      font-weight:800;
+      font-size:12px;
     }
-    .chip:hover{transform:translateY(-1px);border-color:rgba(255,255,255,.22);background:rgba(255,255,255,.06)}
-    .chip.active{border-color:rgba(34,211,238,.60);background:rgba(34,211,238,.10)}
+    .filters button:hover{transform:translateY(-1px);border-color:rgba(255,255,255,.22)}
+    .filters button.active{background:#22d3ee;color:#000;border-color:#22d3ee}
 
     .grid{
       display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
-      gap:14px;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:16px;
     }
+
     .card{
-      border:1px solid rgba(255,255,255,.12);
-      background:rgba(255,255,255,.06);
-      border-radius:22px;
+      background:var(--card);
+      border:1px solid var(--stroke);
+      border-radius:20px;
       overflow:hidden;
       text-decoration:none;
-      transition:transform .12s ease, border-color .12s ease, background .12s ease;
-      box-shadow:0 16px 40px rgba(0,0,0,.25);
-      display:flex;flex-direction:column;
-      min-height:190px;
+      color:inherit;
+      display:flex;
+      flex-direction:column;
+      transition:border-color .12s ease, transform .12s ease, background .12s ease;
+      min-height:250px;
     }
-    .card:hover{transform:translateY(-1px);border-color:rgba(255,255,255,.22);background:rgba(255,255,255,.08)}
-    .body{padding:14px;display:flex;flex-direction:column;gap:10px;flex:1}
+    .card:hover{border-color:#22d3ee; transform:translateY(-1px); background:rgba(255,255,255,.08)}
+
+    .thumb{width:100%;aspect-ratio:16/9;overflow:hidden;background:#000;border-bottom:1px solid rgba(255,255,255,.10)}
+    .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+
+    .body{padding:14px;display:flex;flex-direction:column;gap:8px;flex:1}
     .h3{margin:0;font-size:15px;font-weight:900;line-height:1.25}
-    .meta{margin:0;font-size:12.5px;color:rgba(255,255,255,.72);line-height:1.35}
-    .ctaRow{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:10px}
-    .pill{font-size:11px;padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.12);background:rgba(0,0,0,.18);color:rgba(255,255,255,.80);white-space:nowrap}
-    .go{font-weight:900;font-size:12px;opacity:.9}
+    .meta{margin:0;font-size:13px;color:var(--muted);line-height:1.35}
+    .cta{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:10px}
+    .tag{font-size:11px;padding:5px 9px;border-radius:999px;border:1px solid var(--stroke);background:rgba(0,0,0,.18);white-space:nowrap}
+    .go{font-weight:900;font-size:12px;opacity:.95}
 
     .footer{
-      padding:14px 18px 18px;
-      border-top:1px solid rgba(255,255,255,.08);
+      margin-top:18px;
+      padding:14px 0 0 0;
       color:rgba(255,255,255,.65);
       font-size:12px;
-      background:rgba(0,0,0,.10);
       line-height:1.4;
-    }
-
-    @media (max-width:720px){
-      .header{grid-template-columns:86px 1fr}
-      .avatar{width:78px;height:78px;border-radius:22px}
-      .name{font-size:22px}
-      .socialGrid{grid-template-columns:1fr}
-      .content{padding:14px}
-      .featured{flex-direction:column;align-items:flex-start}
-      .btn{width:100%}
     }
   </style>
 </head>
 
 <body>
   <div class="wrap">
-    <div class="shell">
+    <h1>🛒 Mini Store — Oferte recomandate</h1>
 
-      <div class="header">
-        <div class="avatar"><img src="avatar.jpg" alt="AdrianGrsOfficial" /></div>
+    <div class="filters" role="tablist" aria-label="Categorii">
+      <button class="active" data-filter="all">Toate</button>
+      <button data-filter="apple">🍎 Apple</button>
+      <button data-filter="gaming">🎮 Gaming</button>
+      <button data-filter="accessories">📱 Accesorii</button>
+      <button data-filter="shoes">👟 Încălțăminte</button>
+      <button data-filter="medical">🏥 Medical</button>
+      <button data-filter="watches">⌚ Ceasuri</button>
+      <button data-filter="fashion">👜 Fashion</button>
+    </div>
 
-        <div class="title">
-          <h1 class="name">AdrianGrsOfficial</h1>
-          <p class="sub">Oferte selectate + linkuri oficiale</p>
+    <div class="grid" id="grid">
 
-          <div class="socialGrid" aria-label="Social">
-            <a class="socialCard" href="https://www.tiktok.com/@adriangrs1" target="_blank" rel="noopener" data-ga="social" data-label="TikTok">
-              <div class="scLeft">
-                <div class="scIcon"><img src="icons/tiktok.png" alt="TikTok"></div>
-                <div class="scText"><p class="scTitle">TikTok</p><p class="scHandle">@adriangrs1</p></div>
-              </div>
-              <div class="scRight">↗</div>
-            </a>
-
-            <a class="socialCard" href="https://www.youtube.com/@AdrianGrsOfficial" target="_blank" rel="noopener" data-ga="social" data-label="YouTube">
-              <div class="scLeft">
-                <div class="scIcon"><img src="icons/youtube.png" alt="YouTube"></div>
-                <div class="scText"><p class="scTitle">YouTube</p><p class="scHandle">@AdrianGrsOfficial</p></div>
-              </div>
-              <div class="scRight">↗</div>
-            </a>
-
-            <a class="socialCard" href="https://www.instagram.com/adriangrsofficial/" target="_blank" rel="noopener" data-ga="social" data-label="Instagram">
-              <div class="scLeft">
-                <div class="scIcon"><img src="icons/instagram.png" alt="Instagram"></div>
-                <div class="scText"><p class="scTitle">Instagram</p><p class="scHandle">@adriangrsofficial</p></div>
-              </div>
-              <div class="scRight">↗</div>
-            </a>
-
-            <a class="socialCard" href="https://www.facebook.com/adriangrspodcastclips" target="_blank" rel="noopener" data-ga="social" data-label="Facebook">
-              <div class="scLeft">
-                <div class="scIcon"><img src="icons/facebook.png" alt="Facebook"></div>
-                <div class="scText"><p class="scTitle">Facebook</p><p class="scHandle">/adriangrspodcastclips</p></div>
-              </div>
-              <div class="scRight">↗</div>
-            </a>
-          </div>
+      <!-- ===================== 🍎 APPLE (4) ===================== -->
+      <a class="card" data-cat="apple" data-name="MacBook Air 13 M1 (2020)" data-brand="refurbished.ro"
+         href="https://refurbished.ro/products/apple-macbook-air-13-2020-refurbished-m1-8-core-7-core-gpu-silver?variant=49560743543114"
+         target="_blank" rel="nofollow noopener">
+        <div class="thumb"><img loading="lazy" alt="MacBook Air 13 M1 (2020)"
+          src="https://refurbished.ro/cdn/shop/files/apple-macbook-air-13-2020-refurbished-m1-8-core-7-core-gpu-silver-518275.jpg?v=1734564086&width=1346"></div>
+        <div class="body">
+          <p class="h3">MacBook Air 13” M1 (2020)</p>
+          <p class="meta">Refurbished • Silver</p>
+          <div class="cta"><span class="tag">🍎 Apple</span><span class="go">Vezi ↗</span></div>
         </div>
-      </div>
+      </a>
 
-      <div class="content">
-        <div class="storeHeader">
-          <h2 class="storeTitle">Oferte recomandate</h2>
+      <a class="card" data-cat="apple" data-name="MacBook Pro 14 M1 Pro (2021) — Variant 50333585637706" data-brand="refurbished.ro"
+         href="https://refurbished.ro/products/apple-macbook-pro-14-2021-refurbished-m1-pro-8-core-14-core-gpu-space-gray?variant=50333585637706"
+         target="_blank" rel="nofollow noopener">
+        <div class="thumb"><img loading="lazy" alt="MacBook Pro 14 M1 Pro"
+          src="https://refurbished.ro/cdn/shop/files/apple-macbook-pro-14-2021-refurbished-m1-pro-8-core-797403.jpg?v=1711528981"></div>
+        <div class="body">
+          <p class="h3">MacBook Pro 14” (2021) — M1 Pro</p>
+          <p class="meta">Variant 1 • Space Gray</p>
+          <div class="cta"><span class="tag">🍎 Apple</span><span class="go">Vezi ↗</span></div>
         </div>
+      </a>
 
-        <!-- Featured -->
-        <div class="featured">
-          <div>
-            <div class="badge">🔥 Recomandarea mea</div>
-            <p class="featuredH">MacBook Pro 14" (2021) — Refurbished</p>
-            <p class="featuredP">Performanță foarte bună pentru editare / muncă / daily.</p>
-          </div>
-          <a class="btn"
-             href="https://refurbished.ro/products/apple-macbook-pro-14-2021-refurbished-m1-pro-8-core-14-core-gpu-space-gray?variant=50333585637706"
-             target="_blank" rel="nofollow noopener"
-             data-ga="product" data-label="Featured|Apple|MacBookPro14|Var1">
-            Vezi oferta ↗
-          </a>
+      <a class="card" data-cat="apple" data-name="MacBook Pro 14 M1 Pro (2021) — Variant 50333586161994" data-brand="refurbished.ro"
+         href="https://refurbished.ro/products/apple-macbook-pro-14-2021-refurbished-m1-pro-8-core-14-core-gpu-space-gray?variant=50333586161994"
+         target="_blank" rel="nofollow noopener">
+        <div class="thumb"><img loading="lazy" alt="MacBook Pro 14 M1 Pro (Variant 2)"
+          src="https://refurbished.ro/cdn/shop/files/apple-macbook-pro-14-2021-refurbished-m1-pro-8-core-729259.jpg?v=1711528981&width=1206"></div>
+        <div class="body">
+          <p class="h3">MacBook Pro 14” (2021) — M1 Pro</p>
+          <p class="meta">Variant 2 • Space Gray</p>
+          <div class="cta"><span class="tag">🍎 Apple</span><span class="go">Vezi ↗</span></div>
         </div>
+      </a>
 
-        <!-- Filters -->
-        <div class="chips" role="tablist" aria-label="Categorii">
-          <button class="chip active" type="button" data-filter="all">Toate</button>
-          <button class="chip" type="button" data-filter="gaming">🎮 Gaming</button>
-          <button class="chip" type="button" data-filter="apple">🍎 Apple Refurb</button>
-          <button class="chip" type="button" data-filter="shoes">👟 Încălțăminte</button>
-          <button class="chip" type="button" data-filter="medical">🏥 Medical</button>
-          <button class="chip" type="button" data-filter="watches">⌚ Ceasuri</button>
-          <button class="chip" type="button" data-filter="accessories">📱 Accesorii</button>
-          <button class="chip" type="button" data-filter="fashion">👜 Fashion</button>
+      <a class="card" data-cat="apple" data-name="MacBook Pro 16 M1 Pro (2021)" data-brand="refurbished.ro"
+         href="https://refurbished.ro/products/apple-macbook-pro-16-2021-refurbished-m1-pro-10-core-16-core-gpu-space-gray?variant=51083182833994"
+         target="_blank" rel="nofollow noopener">
+        <div class="thumb"><img loading="lazy" alt="MacBook Pro 16 M1 Pro"
+          src="https://refurbished.ro/cdn/shop/products/apple-macbook-pro-16-2021-refurbished-m1-pro-10-core-453384.jpg?v=1705129288&width=1346"></div>
+        <div class="body">
+          <p class="h3">MacBook Pro 16” (2021) — M1 Pro</p>
+          <p class="meta">Refurbished • Space Gray</p>
+          <div class="cta"><span class="tag">🍎 Apple</span><span class="go">Vezi ↗</span></div>
         </div>
+      </a>
 
-        <!-- GRID -->
-        <div class="grid" id="grid">
-
-          <!-- 🍎 Apple Refurb -->
-          <a class="card" href="https://refurbished.ro/products/apple-macbook-air-13-2020-refurbished-m1-8-core-7-core-gpu-silver?variant=49560743543114"
-             target="_blank" rel="nofollow noopener"
-             data-cat="apple" data-ga="product" data-label="Apple|MacBookAir13|2020|M1">
-            <div class="body">
-              <p class="h3">MacBook Air 13" (2020) — M1</p>
-              <p class="meta">Varianta Silver • refurbished.</p>
-              <div class="ctaRow"><span class="pill">🍎 Apple</span><span class="go">Vezi ↗</span></div>
-            </div>
-          </a>
-
-          <a class="card" href="https://refurbished.ro/products/apple-macbook-pro-14-2021-refurbished-m1-pro-8-core-14-core-gpu-space-gray?variant=50333585637706"
-             target="_blank" rel="nofollow noopener"
-             data-cat="apple" data-ga="product" data-label="Apple|MacBookPro14|2021|M1Pro|Var1">
-            <div class="body">
-              <p class="h3">MacBook Pro 14" (2021) — M1 Pro</p>
-              <p class="meta">8-core CPU / 14-core GPU • Space Gray.</p>
-              <div class="ctaRow"><span class="pill">🍎 Apple</span><span class="go">Vezi ↗</span></div>
-            </div>
-          </a>
-
-          <a class="card" href="https://refurbished.ro/products/apple-macbook-pro-14-2021-refurbished-m1-pro-8-core-14-core-gpu-space-gray?variant=50333586161994"
-             target="_blank" rel="nofollow noopener"
-             data-cat="apple" data-ga="product" data-label="Apple|MacBookPro14|2021|M1Pro|Var2">
-            <div class="body">
-              <p class="h3">MacBook Pro 14" (2021) — M1 Pro (Altă variantă)</p>
-              <p class="meta">Aceeași bază, variantă diferită (variant ID separat).</p>
-              <div class="ctaRow"><span class="pill">🍎 Apple</span><span class="go">Vezi ↗</span></div>
-            </div>
-          </a>
-
-          <a class="card" href="https://refurbished.ro/products/apple-macbook-pro-16-2021-refurbished-m1-pro-10-core-16-core-gpu-space-gray?variant=51083182833994"
-             target="_blank" rel="nofollow noopener"
-             data-cat="apple" data-ga="product" data-label="Apple|MacBookPro16|2021|M1Pro">
-            <div class="body">
-              <p class="h3">MacBook Pro 16" (2021) — M1 Pro</p>
-              <p class="meta">10-core CPU / 16-core GPU • Space Gray.</p>
-              <div class="ctaRow"><span class="pill">🍎 Apple</span><span class="go">Vezi ↗</span></div>
-            </div>
-          </a>
-
-          <!-- 🎮 Gaming -->
-          <a class="card" href="https://www.jocurinoi.ro/controller-hori-wireless-onyx-plus-ps4"
-             target="_blank" rel="nofollow noopener"
-             data-cat="gaming" data-ga="product" data-label="Gaming|Controller|Hori|PS4">
-            <div class="body">
-              <p class="h3">Controller HORI Wireless Onyx Plus (PS4)</p>
-              <p class="meta">Controller wireless pentru PS4.</p>
-              <div class="ctaRow"><span class="pill">🎮 Gaming</span><span class="go">Vezi ↗</span></div>
-            </div>
-          </a>
-
-          <a class="card" href="https://www.jocurinoi.ro/spartan-gear-dual-charging-dock-station-ps5"
-             target="_blank" rel="nofollow noopener"
-             data-cat="gaming" data-ga="product" data-label="Gaming|Dock|Charging|PS5">
-            <div class="body">
-              <p class="h3">Dual Charging Dock Station (PS5)</p>
-              <p class="meta">Stație de încărcare pentru controllere PS5.</p>
-              <div class="ctaRow"><span class="pill">🎮 Gaming</span><span class="go">Vezi ↗</span></div>
-            </div>
-          </a>
-
-          <a class="card" href="https://www.jocurinoi.ro/casti-nacon-big-ben-v1-black-nintendo-switch-nintendo-switch"
-             target="_blank" rel="nofollow noopener"
-             data-cat="gaming" data-ga="product" data-label="Gaming|Casti|Nacon|Switch">
-            <div class="body">
-              <p class="h3">Căști Nacon Big Ben V1 (Nintendo Switch)</p>
-              <p class="meta">Headset pentru Switch.</p>
-              <div class="ctaRow"><span class="pill">🎮 Gaming</span><span class="go">Vezi ↗</span></div>
-            </div>
-          </a>
-
-          <a class="card" href="https://www.jocurinoi.ro/controller-nacon-mg-x-pro-iphone-telefoane"
-             target="_blank" rel="nofollow noopener"
-             data-cat="gaming" data-ga="product" data-label="Gaming|Controller|Nacon|iPhone">
-            <div class="body">
-              <p class="h3">Controller Nacon MG-X Pro (iPhone)</p>
-              <p class="meta">Controller pentru gaming pe iPhone.</p>
-              <div class="ctaRow"><span class="pill">🎮 Gaming</span><span class="go">Vezi ↗</span></div>
-            </div>
-          </a>
-
-          <!-- 📱 Accesorii -->
-          <a class="card" href="https://www.jocurinoi.ro/husa-tech21-iphone-14-pro-evo-crystal-magsafe-cleargraphite-black-telefoane"
-             target="_blank" rel="nofollow noopener"
-             data-cat="accessories" data-ga="product" data-label="Accesorii|Husa|Tech21|iPhone14Pro">
-            <div class="body">
-              <p class="h3">Husă Tech21 Evo Crystal (iPhone 14 Pro)</p>
-              <p class="meta">Compatibilă MagSafe.</p>
-              <div class="ctaRow"><span class="pill">📱 Accesorii</span><span class="go">Vezi ↗</span></div>
-            </div>
-          </a>
-
-          <a class="card" href="https://www.jocurinoi.ro/hama-powerbank-colour-10-10000mah-usb-cusb-a-telefoane"
-             target="_blank" rel="nofollow noopener"
-             data-cat="accessories" data-ga="product" data-label="Accesorii|Powerbank|Hama|10000">
-            <div class="body">
-              <p class="h3">Powerbank Hama 10.000 mAh</p>
-              <p class="meta">USB-C / USB-A.</p>
-              <div class="ctaRow"><span class="pill">📱 Accesorii</span><span class="go">Vezi ↗</span></div>
-            </div>
-          </a>
-
-          <a class="card" href="https://www.jocurinoi.ro/dbramante1928-lynge-flip-case-iphone-13-pro-max-tan-telefoane"
-             target="_blank" rel="nofollow noopener"
-             data-cat="accessories" data-ga="product" data-label="Accesorii|Husa|dbramante1928|iPhone13ProMax">
-            <div class="body">
-              <p class="h3">Husă dbramante1928 Lynge Flip (iPhone 13 Pro Max)</p>
-              <p class="meta">Culoare Tan.</p>
-              <div class="ctaRow"><span class="pill">📱 Accesorii</span><span class="go">Vezi ↗</span></div>
-            </div>
-          </a>
-
-          <a class="card" href="https://www.jocurinoi.ro/speedlink-travel-charger-usb-a-usb-c-15w-for-us-uk-eu-black-telefoane"
-             target="_blank" rel="nofollow noopener"
-             data-cat="accessories" data-ga="product" data-label="Accesorii|Incarcator|Speedlink|15W">
-            <div class="body">
-              <p class="h3">Încărcător Travel USB-A/USB-C 15W</p>
-              <p class="meta">Compatibil US/UK/EU.</p>
-              <div class="ctaRow"><span class="pill">📱 Accesorii</span><span class="go">Vezi ↗</span></div>
-            </div>
-          </a>
-
-          <!-- 👟 Încălțăminte -->
-          <a class="card" href="https://www.otter.ro/pantofi-sport-pepe-jeans-albi-ls60021-din-material-textil-si-piele-naturala"
-             target="_blank" rel="nofollow noopener"
-             data-cat="shoes" data-ga="product" data-label="Shoes|PepeJeans|Alb">
-            <div class="body">
-              <p class="h3">Sneakers Pepe Jeans (alb)</p>
-              <p class="meta">Material textil + piele naturală.</p>
-              <div class="ctaRow"><span class="pill">👟 Încălțăminte</span><span class="go">Vezi ↗</span></div>
-            </div>
-          </a>
-
-          <a class="card" href="https://www.otter.ro/pantofi-sport-skechers-alb-negru-185060-din-piele-ecologica-kzls47111dk1850609"
-             target="_blank" rel="nofollow noopener"
-             data-cat="shoes" data-ga="product" data-label="Shoes|Skechers|AlbNegru">
-            <div class="body">
-              <p class="h3">Sneakers Skechers (alb/negru)</p>
-              <p class="meta">Piele ecologică.</p>
-              <div class="ctaRow"><span class="pill">👟 Încălțăminte</span><span class="go">Vezi ↗</span></div>
-            </div>
-          </a>
-
-          <a class="card" href="https://www.otter.ro/femei/incaltaminte/pantofi/sport/sneakers/pentru/femei/promotii/da/pret/95-244"
-             target="_blank" rel="nofollow noopener"
-             data-cat="shoes" data-ga="product" data-label="Shoes|Promo|Femei">
-            <div class="body">
-              <p class="h3">Promo Sneakers (Femei) — 95–244</p>
-              <p class="meta">Listă cu promoții / filtrare preț.</p>
-              <div class="ctaRow"><span class="pill">👟 Încălțăminte</span><span class="go">Vezi ↗</span></div>
-            </div>
-          </a>
-
-          <a class="card" href="https://www.otter.ro/pantofi-sport-gryxx-maro-82691-din-material-textil"
-             target="_blank" rel="nofollow noopener"
-             data-cat="shoes" data-ga="product" data-label="Shoes|Gryxx|Maro">
-            <div class="body">
-              <p class="h3">Pantofi sport Gryxx (maro)</p>
-              <p class="meta">Material textil.</p>
-              <div class="ctaRow"><span class="pill">👟 Încălțăminte</span><span class="go">Vezi ↗</span></div>
-            </div>
-          </a>
-
-          <a class="card" href="https://www.otter.ro/pantofi-sport-nhot-albi-a386-din-material-textil"
-             target="_blank" rel="nofollow noopener"
-             data-cat="shoes" data-ga="product" data-label="Shoes|Nhot|Alb">
-            <div class="body">
-              <p class="h3">Pantofi sport Nhot (alb)</p>
-              <p class="meta">Material textil.</p>
-              <div class="ctaRow"><span class="pill">👟 Încălțăminte</span><span class="go">Vezi ↗</span></div>
-            </div>
-          </a>
-
-          <!-- 🏥 Medical -->
-          <a class="card" href="https://pansiprod.ro/products/fiole-tonifiere-faciala-collagenix-30-bucati"
-             target="_blank" rel="nofollow noopener"
-             data-cat="medical" data-ga="product" data-label="Medical|Collagenix|Fiole30">
-            <div class="body">
-              <p class="h3">Collagenix — Fiole tonifiere (30 buc)</p>
-              <p class="meta">Îngrijire facială.</p>
-              <div class="ctaRow"><span class="pill">🏥 Medical</span><span class="go">Vezi ↗</span></div>
-            </div>
-          </a>
-
-          <a class="card" href="https://pansiprod.ro/products/plasturi-pentru-ochi-biocollagenix"
-             target="_blank" rel="nofollow noopener"
-             data-cat="medical" data-ga="product" data-label="Medical|BioCollagenix|PlasturiOchi">
-            <div class="body">
-              <p class="h3">BioCollagenix — Plasturi pentru ochi</p>
-              <p class="meta">Îngrijire zona ochilor.</p>
-              <div class="ctaRow"><span class="pill">🏥 Medical</span><span class="go">Vezi ↗</span></div>
-            </div>
-          </a>
-
-          <a class="card" href="https://pansiprod.ro/products/elaine-perine-collagen-peptides-plus-facial-serum"
-             target="_blank" rel="nofollow noopener"
-             data-cat="medical" data-ga="product" data-label="Medical|ElainePerine|Serum">
-            <div class="body">
-              <p class="h3">Elaine Perine — Collagen Peptides Plus (Serum)</p>
-              <p class="meta">Ser facial.</p>
-              <div class="ctaRow"><span class="pill">🏥 Medical</span><span class="go">Vezi ↗</span></div>
-            </div>
-          </a>
-
-          <a class="card" href="https://pansiprod.ro/products/elaine-perine-no-spot-cream-face"
-             target="_blank" rel="nofollow noopener"
-             data-cat="medical" data-ga="product" data-label="Medical|ElainePerine|NoSpot">
-            <div class="body">
-              <p class="h3">Elaine Perine — No Spot Cream</p>
-              <p class="meta">Cremă pentru ten.</p>
-              <div class="ctaRow"><span class="pill">🏥 Medical</span><span class="go">Vezi ↗</span></div>
-            </div>
-          </a>
-
-          <!-- ⌚ Ceasuri -->
-          <a class="card" href="https://www.watchshop.ro/ceasuri-de-birou/watchshop/statie-meteo-termometru-higometru-alarma-ceas-data/"
-             target="_blank" rel="nofollow noopener"
-             data-cat="watches" data-ga="product" data-label="Ceasuri|Birou|StatieMeteo">
-            <div class="body">
-              <p class="h3">Stație meteo + ceas (birou)</p>
-              <p class="meta">Termometru, higrometru, alarmă, dată.</p>
-              <div class="ctaRow"><span class="pill">⌚ Ceasuri</span><span class="go">Vezi ↗</span></div>
-            </div>
-          </a>
-
-          <a class="card" href="https://www.watchshop.ro/ceasuri-de-dama/paul-hewitt/miss-ocean-ph004547/"
-             target="_blank" rel="nofollow noopener"
-             data-cat="watches" data-ga="product" data-label="Ceasuri|Dama|PaulHewitt">
-            <div class="body">
-              <p class="h3">Paul Hewitt — Miss Ocean</p>
-              <p class="meta">Ceas de damă.</p>
-              <div class="ctaRow"><span class="pill">⌚ Ceasuri</span><span class="go">Vezi ↗</span></div>
-            </div>
-          </a>
-
-          <a class="card" href="https://www.watchshop.ro/ceasuri-de-dama/guess/clash-v1029m1/"
-             target="_blank" rel="nofollow noopener"
-             data-cat="watches" data-ga="product" data-label="Ceasuri|Dama|Guess|Clash">
-            <div class="body">
-              <p class="h3">GUESS — Clash</p>
-              <p class="meta">Ceas de damă.</p>
-              <div class="ctaRow"><span class="pill">⌚ Ceasuri</span><span class="go">Vezi ↗</span></div>
-            </div>
-          </a>
-
-          <a class="card" href="https://www.watchshop.ro/ceasuri-barbatesti/casio/vintage-a700weg-9a/"
-             target="_blank" rel="nofollow noopener"
-             data-cat="watches" data-ga="product" data-label="Ceasuri|Barbati|Casio|VintageA700">
-            <div class="body">
-              <p class="h3">Casio — Vintage A700WEG-9A</p>
-              <p class="meta">Ceas bărbătesc.</p>
-              <div class="ctaRow"><span class="pill">⌚ Ceasuri</span><span class="go">Vezi ↗</span></div>
-            </div>
-          </a>
-
-          <a class="card" href="https://www.watchshop.ro/ceasuri-barbatesti/guess/hollywood-x-highland-v1020m1/"
-             target="_blank" rel="nofollow noopener"
-             data-cat="watches" data-ga="product" data-label="Ceasuri|Barbati|Guess|HollywoodHighland">
-            <div class="body">
-              <p class="h3">GUESS — Hollywood x Highland</p>
-              <p class="meta">Ceas bărbătesc.</p>
-              <div class="ctaRow"><span class="pill">⌚ Ceasuri</span><span class="go">Vezi ↗</span></div>
-            </div>
-          </a>
-
-          <!-- 👜 Fashion -->
-          <a class="card" href="https://www.watchshop.ro/portofele-dama/karl-lagerfeld/226w3205-a999_black/"
-             target="_blank" rel="nofollow noopener"
-             data-cat="fashion" data-ga="product" data-label="Fashion|Portofel|KarlLagerfeld">
-            <div class="body">
-              <p class="h3">Karl Lagerfeld — Portofel damă (Black)</p>
-              <p class="meta">Accesoriu fashion.</p>
-              <div class="ctaRow"><span class="pill">👜 Fashion</span><span class="go">Vezi ↗</span></div>
-            </div>
-          </a>
-
+      <!-- ===================== 🎮 GAMING (4) ===================== -->
+      <a class="card" data-cat="gaming" data-name="Controller HORI Wireless Onyx Plus (PS4)" data-brand="jocurinoi.ro"
+         href="https://www.jocurinoi.ro/controller-hori-wireless-onyx-plus-ps4"
+         target="_blank" rel="nofollow noopener">
+        <div class="thumb"><img loading="lazy" alt="Controller HORI PS4"
+          src="https://www.jocurinoi.ro/image/cache/wp/ij/data/imported/controller-hori-wireless-onyx-plus-pc-26156/main.webp"></div>
+        <div class="body">
+          <p class="h3">Controller HORI PS4</p>
+          <p class="meta">Wireless Onyx Plus</p>
+          <div class="cta"><span class="tag">🎮 Gaming</span><span class="go">Vezi ↗</span></div>
         </div>
-      </div>
+      </a>
 
-      <div class="footer">
-        ⚠️ Disclaimer: Linkuri de afiliere. Pot primi comision fără costuri suplimentare pentru tine.
-      </div>
+      <a class="card" data-cat="gaming" data-name="Spartan Gear Dual Charging Dock Station (PS5)" data-brand="jocurinoi.ro"
+         href="https://www.jocurinoi.ro/spartan-gear-dual-charging-dock-station-ps5"
+         target="_blank" rel="nofollow noopener">
+        <div class="thumb"><img loading="lazy" alt="Dock încărcare PS5"
+          src="https://www.jocurinoi.ro/image/cache/wp/ip/data/imported/spartan-gear-statie-dock-incarcare-dubla-ps5-28350/main.webp"></div>
+        <div class="body">
+          <p class="h3">Dock încărcare PS5</p>
+          <p class="meta">Dual Charging Station</p>
+          <div class="cta"><span class="tag">🎮 Gaming</span><span class="go">Vezi ↗</span></div>
+        </div>
+      </a>
 
+      <a class="card" data-cat="gaming" data-name="Căști Nacon Big Ben V1 (Nintendo Switch)" data-brand="jocurinoi.ro"
+         href="https://www.jocurinoi.ro/casti-nacon-big-ben-v1-black-nintendo-switch-nintendo-switch"
+         target="_blank" rel="nofollow noopener">
+        <div class="thumb"><img loading="lazy" alt="Căști Nacon Switch"
+          src="https://www.jocurinoi.ro/image/cache/wp/ij/data/imported/casti-nacon-big-ben-v1-black---nintendo-switch-nintendo-switch-41920/main.webp"></div>
+        <div class="body">
+          <p class="h3">Căști Nacon (Switch)</p>
+          <p class="meta">Big Ben V1 • Black</p>
+          <div class="cta"><span class="tag">🎮 Gaming</span><span class="go">Vezi ↗</span></div>
+        </div>
+      </a>
+
+      <a class="card" data-cat="gaming" data-name="Controller Nacon MG-X Pro (iPhone)" data-brand="jocurinoi.ro"
+         href="https://www.jocurinoi.ro/controller-nacon-mg-x-pro-iphone-telefoane"
+         target="_blank" rel="nofollow noopener">
+        <div class="thumb"><img loading="lazy" alt="Controller Nacon iPhone"
+          src="https://www.jocurinoi.ro/image/cache/wp/ij/products_imported/41938/main.webp"></div>
+        <div class="body">
+          <p class="h3">Controller Nacon MG-X Pro</p>
+          <p class="meta">Gaming pe iPhone</p>
+          <div class="cta"><span class="tag">🎮 Gaming</span><span class="go">Vezi ↗</span></div>
+        </div>
+      </a>
+
+      <!-- ===================== 📱 ACCESORII (4) ===================== -->
+      <a class="card" data-cat="accessories" data-name="Husă Tech21 iPhone 14 Pro Evo Crystal MagSafe" data-brand="jocurinoi.ro"
+         href="https://www.jocurinoi.ro/husa-tech21-iphone-14-pro-evo-crystal-magsafe-cleargraphite-black-telefoane"
+         target="_blank" rel="nofollow noopener">
+        <div class="thumb"><img loading="lazy" alt="Husă Tech21 iPhone 14 Pro"
+          src="https://www.jocurinoi.ro/image/cache/wp/ij/products_imported/45981/main.webp"></div>
+        <div class="body">
+          <p class="h3">Husă Tech21 (iPhone 14 Pro)</p>
+          <p class="meta">Evo Crystal • MagSafe</p>
+          <div class="cta"><span class="tag">📱 Accesorii</span><span class="go">Vezi ↗</span></div>
+        </div>
+      </a>
+
+      <a class="card" data-cat="accessories" data-name="Powerbank Hama Colour 10 (10.000mAh)" data-brand="jocurinoi.ro"
+         href="https://www.jocurinoi.ro/hama-powerbank-colour-10-10000mah-usb-cusb-a-telefoane"
+         target="_blank" rel="nofollow noopener">
+        <div class="thumb"><img loading="lazy" alt="Powerbank Hama 10.000mAh"
+          src="https://www.jocurinoi.ro/image/cache/wp/ij/products_imported/70289/main.webp"></div>
+        <div class="body">
+          <p class="h3">Powerbank Hama 10.000mAh</p>
+          <p class="meta">USB-C / USB-A</p>
+          <div class="cta"><span class="tag">📱 Accesorii</span><span class="go">Vezi ↗</span></div>
+        </div>
+      </a>
+
+      <a class="card" data-cat="accessories" data-name="Husă dbramante1928 Lynge Flip iPhone 13 Pro Max" data-brand="jocurinoi.ro"
+         href="https://www.jocurinoi.ro/dbramante1928-lynge-flip-case-iphone-13-pro-max-tan-telefoane"
+         target="_blank" rel="nofollow noopener">
+        <div class="thumb"><img loading="lazy" alt="Husă dbramante1928 iPhone 13 Pro Max"
+          src="https://www.jocurinoi.ro/image/cache/wp/ij/products_imported/70542/main.webp"></div>
+        <div class="body">
+          <p class="h3">Husă dbramante1928 (iPhone 13 Pro Max)</p>
+          <p class="meta">Lynge Flip • Tan</p>
+          <div class="cta"><span class="tag">📱 Accesorii</span><span class="go">Vezi ↗</span></div>
+        </div>
+      </a>
+
+      <a class="card" data-cat="accessories" data-name="Încărcător Speedlink Travel USB-A/USB-C 15W" data-brand="jocurinoi.ro"
+         href="https://www.jocurinoi.ro/speedlink-travel-charger-usb-a-usb-c-15w-for-us-uk-eu-black-telefoane"
+         target="_blank" rel="nofollow noopener">
+        <div class="thumb"><img loading="lazy" alt="Încărcător Speedlink Travel"
+          src="https://www.jocurinoi.ro/image/cache/wp/ij/products_imported/70479/main.webp"></div>
+        <div class="body">
+          <p class="h3">Încărcător Travel 15W</p>
+          <p class="meta">USB-A / USB-C • US/UK/EU</p>
+          <div class="cta"><span class="tag">📱 Accesorii</span><span class="go">Vezi ↗</span></div>
+        </div>
+      </a>
+
+      <!-- ===================== 👟 ÎNCĂLȚĂMINTE (5) ===================== -->
+      <a class="card" data-cat="shoes" data-name="Pantofi sport Pepe Jeans (alb)" data-brand="otter.ro"
+         href="https://www.otter.ro/pantofi-sport-pepe-jeans-albi-ls60021-din-material-textil-si-piele-naturala"
+         target="_blank" rel="nofollow noopener">
+        <div class="thumb"><img loading="lazy" alt="Pepe Jeans"
+          src="https://cdn.otter.ro/media/catalog/product/cache/0426d00bd1554e475c7fe0a52342803c/1/4/14f85ba95dad48d0fab34e2745eb94599d30e133b38eccc5d0f614eed7dd0b51.jpeg"></div>
+        <div class="body">
+          <p class="h3">Sneakers Pepe Jeans (alb)</p>
+          <p class="meta">Textil + piele naturală</p>
+          <div class="cta"><span class="tag">👟 Încălțăminte</span><span class="go">Vezi ↗</span></div>
+        </div>
+      </a>
+
+      <a class="card" data-cat="shoes" data-name="Pantofi sport Skechers (alb/negru)" data-brand="otter.ro"
+         href="https://www.otter.ro/pantofi-sport-skechers-alb-negru-185060-din-piele-ecologica-kzls47111dk1850609"
+         target="_blank" rel="nofollow noopener">
+        <div class="thumb"><img loading="lazy" alt="Skechers"
+          src="https://cdn.otter.ro/media/catalog/product/cache/0426d00bd1554e475c7fe0a52342803c/2/9/29d86f73026fb13c82e08353930eb5d4cebe4c321edbf15b387f3739f7c52062.jpeg"></div>
+        <div class="body">
+          <p class="h3">Sneakers Skechers (alb/negru)</p>
+          <p class="meta">Piele ecologică</p>
+          <div class="cta"><span class="tag">👟 Încălțăminte</span><span class="go">Vezi ↗</span></div>
+        </div>
+      </a>
+
+      <!-- listă promoții: folosim o poză generică (femei) -->
+      <a class="card" data-cat="shoes" data-name="Promo sneakers femei (95–244)" data-brand="otter.ro"
+         href="https://www.otter.ro/femei/incaltaminte/pantofi/sport/sneakers/pentru/femei/promotii/da/pret/95-244"
+         target="_blank" rel="nofollow noopener">
+        <div class="thumb"><img loading="lazy" alt="Promo sneakers femei"
+          src="https://cdn.otter.ro/media/catalog/product/cache/0426d00bd1554e475c7fe0a52342803c/1/4/14f85ba95dad48d0fab34e2745eb94599d30e133b38eccc5d0f614eed7dd0b51.jpeg"></div>
+        <div class="body">
+          <p class="h3">Promo Sneakers (Femei)</p>
+          <p class="meta">Listă promoții • preț 95–244</p>
+          <div class="cta"><span class="tag">👟 Încălțăminte</span><span class="go">Vezi ↗</span></div>
+        </div>
+      </a>
+
+      <a class="card" data-cat="shoes" data-name="Pantofi sport Gryxx (maro)" data-brand="otter.ro"
+         href="https://www.otter.ro/pantofi-sport-gryxx-maro-82691-din-material-textil"
+         target="_blank" rel="nofollow noopener">
+        <div class="thumb"><img loading="lazy" alt="Gryxx maro"
+          src="https://cdn.otter.ro/media/catalog/product/cache/0426d00bd1554e475c7fe0a52342803c/b/e/be85464c2423ca89b5e3bfb46140ed282d88100f76f207ace5fdf25042e6094f.jpeg"></div>
+        <div class="body">
+          <p class="h3">Pantofi sport Gryxx (maro)</p>
+          <p class="meta">Material textil</p>
+          <div class="cta"><span class="tag">👟 Încălțăminte</span><span class="go">Vezi ↗</span></div>
+        </div>
+      </a>
+
+      <a class="card" data-cat="shoes" data-name="Pantofi sport Nhot (alb)" data-brand="otter.ro"
+         href="https://www.otter.ro/pantofi-sport-nhot-albi-a386-din-material-textil"
+         target="_blank" rel="nofollow noopener">
+        <div class="thumb"><img loading="lazy" alt="Nhot alb"
+          src="https://cdn.otter.ro/media/catalog/product/cache/0426d00bd1554e475c7fe0a52342803c/3/9/398b18709168860b90e8f20d68b3d713e9b9d41367dcaea4ec97b99d436bb3af.jpeg"></div>
+        <div class="body">
+          <p class="h3">Pantofi sport Nhot (alb)</p>
+          <p class="meta">Material textil</p>
+          <div class="cta"><span class="tag">👟 Încălțăminte</span><span class="go">Vezi ↗</span></div>
+        </div>
+      </a>
+
+      <!-- ===================== 🏥 MEDICAL (4) ===================== -->
+      <a class="card" data-cat="medical" data-name="Collagenix fiole tonifiere (30 buc)" data-brand="pansiprod.ro"
+         href="https://pansiprod.ro/products/fiole-tonifiere-faciala-collagenix-30-bucati"
+         target="_blank" rel="nofollow noopener">
+        <div class="thumb"><img loading="lazy" alt="Collagenix fiole"
+          src="https://pansiprod.ro/cdn/shop/products/main-canvas-63c013ae634cd31d9a1cc2f3.jpg?v=1673532429"></div>
+        <div class="body">
+          <p class="h3">Collagenix fiole (30 buc)</p>
+          <p class="meta">Îngrijire facială</p>
+          <div class="cta"><span class="tag">🏥 Medical</span><span class="go">Vezi ↗</span></div>
+        </div>
+      </a>
+
+      <a class="card" data-cat="medical" data-name="Plasturi pentru ochi BioCollagenix" data-brand="pansiprod.ro"
+         href="https://pansiprod.ro/products/plasturi-pentru-ochi-biocollagenix"
+         target="_blank" rel="nofollow noopener">
+        <div class="thumb"><img loading="lazy" alt="Plasturi ochi"
+          src="https://pansiprod.ro/cdn/shop/products/27c73e_77d8f59540e74e24b7bd23fa51f1e57b_mv2.png?v=1664910278"></div>
+        <div class="body">
+          <p class="h3">Plasturi pentru ochi</p>
+          <p class="meta">BioCollagenix</p>
+          <div class="cta"><span class="tag">🏥 Medical</span><span class="go">Vezi ↗</span></div>
+        </div>
+      </a>
+
+      <a class="card" data-cat="medical" data-name="Elaine Perine Collagen Peptides Plus Serum" data-brand="pansiprod.ro"
+         href="https://pansiprod.ro/products/elaine-perine-collagen-peptides-plus-facial-serum"
+         target="_blank" rel="nofollow noopener">
+        <div class="thumb"><img loading="lazy" alt="Elaine Perine Serum"
+          src="https://pansiprod.ro/cdn/shop/files/VeganElainePerine_6.png?v=1702539139"></div>
+        <div class="body">
+          <p class="h3">Elaine Perine — Serum</p>
+          <p class="meta">Collagen Peptides Plus</p>
+          <div class="cta"><span class="tag">🏥 Medical</span><span class="go">Vezi ↗</span></div>
+        </div>
+      </a>
+
+      <a class="card" data-cat="medical" data-name="Elaine Perine No Spot Cream" data-brand="pansiprod.ro"
+         href="https://pansiprod.ro/products/elaine-perine-no-spot-cream-face"
+         target="_blank" rel="nofollow noopener">
+        <div class="thumb"><img loading="lazy" alt="Elaine Perine No Spot"
+          src="https://pansiprod.ro/cdn/shop/files/VeganElainePerine_16.png?v=1702543037"></div>
+        <div class="body">
+          <p class="h3">Elaine Perine — No Spot</p>
+          <p class="meta">Cremă pentru ten</p>
+          <div class="cta"><span class="tag">🏥 Medical</span><span class="go">Vezi ↗</span></div>
+        </div>
+      </a>
+
+      <!-- ===================== ⌚ CEASURI (5) ===================== -->
+      <a class="card" data-cat="watches" data-name="Stație meteo + ceas (birou)" data-brand="watchshop.ro"
+         href="https://www.watchshop.ro/ceasuri-de-birou/watchshop/statie-meteo-termometru-higometru-alarma-ceas-data/"
+         target="_blank" rel="nofollow noopener">
+        <div class="thumb"><img loading="lazy" alt="Stație meteo ceas birou"
+          src="https://cdn.watchshop.ro/images/products/img_201902052353/148919/full/watchshop-sm001-statie-meteo-termometru-higometru-alarma-ceas-data-326248.webp"></div>
+        <div class="body">
+          <p class="h3">Stație meteo + ceas</p>
+          <p class="meta">Termometru • higrometru • alarmă</p>
+          <div class="cta"><span class="tag">⌚ Ceasuri</span><span class="go">Vezi ↗</span></div>
+        </div>
+      </a>
+
+      <a class="card" data-cat="watches" data-name="Paul Hewitt Miss Ocean PH004547" data-brand="watchshop.ro"
+         href="https://www.watchshop.ro/ceasuri-de-dama/paul-hewitt/miss-ocean-ph004547/"
+         target="_blank" rel="nofollow noopener">
+        <div class="thumb"><img loading="lazy" alt="Paul Hewitt Miss Ocean"
+          src="https://cdn.watchshop.ro/images/products/img_202111121617/245452/full/ceas-paul-hewitt-miss-ocean-ph004547-619026.jpg"></div>
+        <div class="body">
+          <p class="h3">Paul Hewitt — Miss Ocean</p>
+          <p class="meta">Ceas de damă</p>
+          <div class="cta"><span class="tag">⌚ Ceasuri</span><span class="go">Vezi ↗</span></div>
+        </div>
+      </a>
+
+      <a class="card" data-cat="watches" data-name="GUESS Clash V1029M1" data-brand="watchshop.ro"
+         href="https://www.watchshop.ro/ceasuri-de-dama/guess/clash-v1029m1/"
+         target="_blank" rel="nofollow noopener">
+        <div class="thumb"><img loading="lazy" alt="Guess Clash"
+          src="https://cdn.watchshop.ro/images/products/img_202111121617/251013/full/ceas-guess-v1029m1-641706.jpg"></div>
+        <div class="body">
+          <p class="h3">GUESS — Clash</p>
+          <p class="meta">Ceas de damă</p>
+          <div class="cta"><span class="tag">⌚ Ceasuri</span><span class="go">Vezi ↗</span></div>
+        </div>
+      </a>
+
+      <a class="card" data-cat="watches" data-name="Casio Vintage A700WEG-9A" data-brand="watchshop.ro"
+         href="https://www.watchshop.ro/ceasuri-barbatesti/casio/vintage-a700weg-9a/"
+         target="_blank" rel="nofollow noopener">
+        <div class="thumb"><img loading="lazy" alt="Casio Vintage A700"
+          src="https://cdn.watchshop.ro/images/products/img_201902052353/139005/full/ceas-casio-retro-a700weg-9aef-308657.jpg"></div>
+        <div class="body">
+          <p class="h3">Casio — Vintage A700</p>
+          <p class="meta">Ceas bărbătesc</p>
+          <div class="cta"><span class="tag">⌚ Ceasuri</span><span class="go">Vezi ↗</span></div>
+        </div>
+      </a>
+
+      <a class="card" data-cat="watches" data-name="GUESS Hollywood x Highland V1020M1" data-brand="watchshop.ro"
+         href="https://www.watchshop.ro/ceasuri-barbatesti/guess/hollywood-x-highland-v1020m1/"
+         target="_blank" rel="nofollow noopener">
+        <div class="thumb"><img loading="lazy" alt="Guess Hollywood x Highland"
+          src="https://cdn.watchshop.ro/images/products/img_201902052353/140724/full/ceas-guess-hollywood-x-highland-v1020m1-313998.gif"></div>
+        <div class="body">
+          <p class="h3">GUESS — Hollywood x Highland</p>
+          <p class="meta">Ceas bărbătesc</p>
+          <div class="cta"><span class="tag">⌚ Ceasuri</span><span class="go">Vezi ↗</span></div>
+        </div>
+      </a>
+
+      <!-- ===================== 👜 FASHION (1) ===================== -->
+      <a class="card" data-cat="fashion" data-name="Portofel Karl Lagerfeld (Black)" data-brand="watchshop.ro"
+         href="https://www.watchshop.ro/portofele-dama/karl-lagerfeld/226w3205-a999_black/"
+         target="_blank" rel="nofollow noopener">
+        <div class="thumb"><img loading="lazy" alt="Portofel Karl Lagerfeld"
+          src="https://cdn.watchshop.ro/images/products/img_202111121617/249415/full/portofel-karl-lagerfeld-226w3205-a999_black-632941.jpg"></div>
+        <div class="body">
+          <p class="h3">Portofel Karl Lagerfeld</p>
+          <p class="meta">Fashion • damă</p>
+          <div class="cta"><span class="tag">👜 Fashion</span><span class="go">Vezi ↗</span></div>
+        </div>
+      </a>
+
+    </div>
+
+    <div class="footer">
+      ⚠️ Disclaimer: Linkuri de afiliere. Pot primi comision fără costuri suplimentare pentru tine.
     </div>
   </div>
 
-  <!-- Filters JS -->
   <script>
-    const chips = document.querySelectorAll(".chip");
-    const cards = document.querySelectorAll("#grid .card");
+    // ✅ Filter UI + GA4
+    const buttons = document.querySelectorAll(".filters button");
+    const cards = document.querySelectorAll(".card");
 
-    function setActive(btn){
-      chips.forEach(c => c.classList.remove("active"));
-      btn.classList.add("active");
-    }
     function applyFilter(filter){
-      cards.forEach(card => {
-        const cat = card.getAttribute("data-cat");
-        const show = (filter === "all") || (cat === filter);
-        card.style.display = show ? "" : "none";
+      cards.forEach(c => {
+        c.style.display = (filter === "all" || c.dataset.cat === filter) ? "" : "none";
       });
+
+      // GA4: filter_select + view_item_list
+      if (typeof gtag === "function") {
+        gtag('event', 'filter_select', { filter_name: filter });
+        gtag('event', 'view_item_list', { item_list_name: filter === 'all' ? 'All' : `Category: ${filter}` });
+      }
     }
-    chips.forEach(btn => {
+
+    buttons.forEach(btn => {
       btn.addEventListener("click", () => {
-        const f = btn.getAttribute("data-filter");
-        setActive(btn);
-        applyFilter(f);
+        buttons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        applyFilter(btn.dataset.filter);
       });
     });
-  </script>
 
-  <!-- GA tracking for clicks -->
-  <script>
-    document.addEventListener("click", function(e){
-      const a = e.target.closest("a");
+    // ✅ Product click tracking
+    document.addEventListener('click', (e) => {
+      const a = e.target.closest('a.card');
       if(!a) return;
-      const gaType = a.getAttribute("data-ga");
-      if(!gaType) return;
 
-      gtag('event', 'click', {
-        event_category: gaType,
-        event_label: a.getAttribute("data-label") || a.href,
-        transport_type: 'beacon'
-      });
+      const name = a.dataset.name || 'Unknown';
+      const brand = a.dataset.brand || 'Unknown';
+      const cat = a.dataset.cat || 'Unknown';
+      const url = a.href;
+
+      if (typeof gtag === "function") {
+        gtag('event', 'select_item', {
+          item_list_name: cat,
+          items: [{
+            item_name: name,
+            item_brand: brand,
+            item_category: cat,
+            item_id: url
+          }]
+        });
+
+        gtag('event', 'click_outbound', {
+          event_category: 'outbound',
+          event_label: url
+        });
+      }
     });
   </script>
 
-  <!-- ✅ 2Performant Link2 (asigură-te că data-id e al tău exact) -->
+  <!-- ✅ 2Performant Link2 -->
   <script
     src="https://cdn.2performant.com/l2/link2.js"
     id="linkTwoPerformant"
     data-id="l2/0/1/9/0/3/6/1/9/5/3"
     data-api-host="https://cdn.2performant.com">
   </script>
-
 </body>
 </html>
