@@ -1,351 +1,294 @@
 <!doctype html>
 <html lang="ro">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>AdrianGrsOfficial — Mini Store</title>
-<meta name="description" content="Mini store afiliat cu produse selectate." />
-<meta name="theme-color" content="#070911" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AdrianGrsOfficial — Oferte</title>
+  <meta name="description" content="Mini store afiliat: oferte selectate + linkuri oficiale AdrianGrsOfficial." />
+  <meta name="theme-color" content="#070911" />
 
-<!-- ✅ GA4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JGGRWDXT26"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+  <!-- GA4 -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGGRWDXT26"></script>
+  <script>
+    gtag('js', new Date());
+    gtag('config', 'G-JGGRWDXT26', { anonymize_ip: true });
+  </script>
 
-  gtag('js', new Date());
+  <style>
+    :root{
+      --bg:#070911;
+      --stroke:rgba(255,255,255,.10);
+      --text:#f2f4ff;
+      --muted:rgba(255,255,255,.70);
+      --shadow:0 24px 80px rgba(0,0,0,.55);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial;
+      color:var(--text);
+      background:
+        radial-gradient(900px 520px at 25% 0%, rgba(168,85,247,.35), transparent 60%),
+        radial-gradient(900px 520px at 80% 20%, rgba(34,211,238,.22), transparent 62%),
+        radial-gradient(900px 520px at 50% 85%, rgba(99,102,241,.16), transparent 60%),
+        var(--bg);
+      overflow-x:hidden;
+    }
+    a{color:inherit}
+    .wrap{max-width:1100px;margin:0 auto;padding:22px 16px 44px}
+    .shell{
+      border:1px solid var(--stroke);
+      border-radius:32px;
+      background:linear-gradient(135deg, rgba(168,85,247,.10), rgba(34,211,238,.06));
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(12px);
+      overflow:hidden;
+    }
 
-  // Basic config + privacy friendly
-  gtag('config', 'G-JGGRWDXT26', {
-    anonymize_ip: true
-  });
-</script>
+    .header{
+      display:grid;
+      grid-template-columns:120px 1fr;
+      gap:18px;
+      align-items:center;
+      padding:22px;
+      border-bottom:1px solid rgba(255,255,255,.08);
+      background:rgba(0,0,0,.10);
+    }
+    .avatar{
+      width:108px;height:108px;
+      border-radius:26px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.10);
+      background:#000;
+      box-shadow:0 18px 60px rgba(0,0,0,.55);
+    }
+    .avatar img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(100%);transform:scale(1.02)}
+    .title{display:flex;flex-direction:column;gap:10px;min-width:0}
+    .name{font-size:28px;font-weight:900;letter-spacing:-.02em;margin:0}
+    .sub{margin:0;color:rgba(255,255,255,.70);font-size:14px;line-height:1.4}
 
-<style>
-:root{
-  --bg:#070911;
-  --text:#f2f4ff;
-  --muted:rgba(255,255,255,.7);
-  --card:rgba(255,255,255,.06);
-  --stroke:rgba(255,255,255,.12);
-}
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial;
-  background:var(--bg);
-  color:var(--text);
-}
-.wrap{max-width:1200px;margin:0 auto;padding:24px}
-h1{margin:0 0 16px 0;font-size:28px}
+    .socialGrid{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:12px;
+      margin-top:6px;
+    }
+    .socialCard{
+      display:flex;align-items:center;justify-content:space-between;
+      gap:14px;
+      padding:14px 16px;
+      border-radius:22px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.06);
+      text-decoration:none;
+      transition:transform .12s ease, border-color .12s ease, background .12s ease;
+      min-height:74px;
+    }
+    .socialCard:hover{transform:translateY(-1px);border-color:rgba(255,255,255,.22);background:rgba(255,255,255,.08)}
+    .scLeft{display:flex;gap:12px;align-items:center;min-width:0}
+    .scIcon{width:46px;height:46px;border-radius:16px;border:1px solid rgba(255,255,255,.14);background:rgba(0,0,0,.30);display:grid;place-items:center}
+    .scIcon img{width:26px;height:26px;object-fit:contain;display:block}
+    .scText{min-width:0}
+    .scTitle{font-size:15px;font-weight:900;margin:0 0 2px 0}
+    .scHandle{margin:0;color:rgba(255,255,255,.75);font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .scRight{width:38px;height:38px;border-radius:14px;border:1px solid rgba(255,255,255,.14);background:rgba(0,0,0,.22);display:grid;place-items:center}
 
-.filters{
-  display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px
-}
-.filters button{
-  background:rgba(255,255,255,.08);
-  border:1px solid var(--stroke);
-  color:var(--text);
-  padding:8px 12px;
-  border-radius:999px;
-  cursor:pointer;
-}
-.filters button.active{background:#22d3ee;color:#000}
+    .content{padding:18px}
 
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:16px;
-}
+    .chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 16px 0}
+    .chip{
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(0,0,0,.20);
+      color:rgba(255,255,255,.84);
+      padding:8px 10px;
+      border-radius:999px;
+      font-size:12px;
+      cursor:pointer;
+      user-select:none;
+      transition:transform .12s ease, border-color .12s ease, background .12s ease;
+    }
+    .chip:hover{transform:translateY(-1px);border-color:rgba(255,255,255,.22);background:rgba(255,255,255,.06)}
+    .chip.active{border-color:rgba(34,211,238,.60);background:rgba(34,211,238,.10)}
 
-.card{
-  background:var(--card);
-  border:1px solid var(--stroke);
-  border-radius:20px;
-  overflow:hidden;
-  text-decoration:none;
-  color:inherit;
-  display:flex;
-  flex-direction:column;
-  transition:border-color .12s ease, transform .12s ease;
-}
-.card:hover{border-color:#22d3ee; transform:translateY(-1px)}
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+      gap:14px;
+    }
+    .card{
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.06);
+      border-radius:22px;
+      overflow:hidden;
+      text-decoration:none;
+      transition:transform .12s ease, border-color .12s ease, background .12s ease;
+      box-shadow:0 16px 40px rgba(0,0,0,.25);
+      display:flex;flex-direction:column;
+      min-height:250px;
+    }
+    .card:hover{transform:translateY(-1px);border-color:rgba(255,255,255,.22);background:rgba(255,255,255,.08)}
 
-.thumb{
-  width:100%;
-  aspect-ratio:16/9;
-  overflow:hidden;
-  background:#000;
-}
-.thumb img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-}
+    /* THUMBNAIL: poză produs (nu banner) */
+    .thumb{
+      width:100%;
+      aspect-ratio:16/9;
+      background:rgba(0,0,0,.25);
+      border-bottom:1px solid rgba(255,255,255,.10);
+      overflow:hidden;
+    }
+    .thumb img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      transform:scale(1.02);
+    }
 
-.body{
-  padding:14px;
-  display:flex;
-  flex-direction:column;
-  gap:8px;
-  flex:1;
-}
-.h3{margin:0;font-size:15px;font-weight:800}
-.meta{margin:0;font-size:13px;color:var(--muted)}
-.cta{
-  margin-top:auto;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-.tag{
-  font-size:11px;
-  padding:4px 8px;
-  border-radius:999px;
-  border:1px solid var(--stroke);
-}
-.go{font-weight:800;font-size:12px}
-</style>
+    .body{padding:14px;display:flex;flex-direction:column;gap:10px;flex:1}
+    .h3{margin:0;font-size:15px;font-weight:900;line-height:1.25}
+    .meta{margin:0;font-size:12.5px;color:rgba(255,255,255,.72);line-height:1.35}
+    .ctaRow{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:10px}
+    .pill{font-size:11px;padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.12);background:rgba(0,0,0,.18);color:rgba(255,255,255,.80);white-space:nowrap}
+    .go{font-weight:900;font-size:12px;opacity:.9}
+
+    .footer{
+      padding:14px 18px 18px;
+      border-top:1px solid rgba(255,255,255,.08);
+      color:rgba(255,255,255,.65);
+      font-size:12px;
+      background:rgba(0,0,0,.10);
+      line-height:1.4;
+    }
+
+    @media (max-width:720px){
+      .header{grid-template-columns:86px 1fr}
+      .avatar{width:78px;height:78px;border-radius:22px}
+      .name{font-size:22px}
+      .socialGrid{grid-template-columns:1fr}
+      .content{padding:14px}
+    }
+  </style>
 </head>
 
 <body>
-<div class="wrap">
+  <div class="wrap">
+    <div class="shell">
 
-<h1>🛒 Oferte recomandate</h1>
+      <div class="header">
+        <div class="avatar"><img src="avatar.jpg" alt="AdrianGrsOfficial" /></div>
 
-<div class="filters" role="tablist" aria-label="Categorii">
-  <button class="active" data-filter="all">Toate</button>
-  <button data-filter="apple">🍎 Apple</button>
-  <button data-filter="gaming">🎮 Gaming</button>
-  <button data-filter="accessories">📱 Accesorii</button>
-  <button data-filter="shoes">👟 Încălțăminte</button>
-  <button data-filter="medical">🏥 Medical</button>
-  <button data-filter="watches">⌚ Ceasuri</button>
-  <button data-filter="fashion">👜 Fashion</button>
-</div>
+        <div class="title">
+          <h1 class="name">AdrianGrsOfficial</h1>
+          <p class="sub">Oferte selectate + linkuri oficiale</p>
 
-<div class="grid" id="grid">
+          <div class="socialGrid" aria-label="Social">
+            <a class="socialCard" href="https://www.tiktok.com/@adriangrs1" target="_blank" rel="noopener">
+              <div class="scLeft"><div class="scIcon"><img src="icons/tiktok.png" alt="TikTok"></div><div class="scText"><p class="scTitle">TikTok</p><p class="scHandle">@adriangrs1</p></div></div>
+              <div class="scRight">↗</div>
+            </a>
+            <a class="socialCard" href="https://www.youtube.com/@AdrianGrsOfficial" target="_blank" rel="noopener">
+              <div class="scLeft"><div class="scIcon"><img src="icons/youtube.png" alt="YouTube"></div><div class="scText"><p class="scTitle">YouTube</p><p class="scHandle">@AdrianGrsOfficial</p></div></div>
+              <div class="scRight">↗</div>
+            </a>
+            <a class="socialCard" href="https://www.instagram.com/adriangrsofficial/" target="_blank" rel="noopener">
+              <div class="scLeft"><div class="scIcon"><img src="icons/instagram.png" alt="Instagram"></div><div class="scText"><p class="scTitle">Instagram</p><p class="scHandle">@adriangrsofficial</p></div></div>
+              <div class="scRight">↗</div>
+            </a>
+            <a class="socialCard" href="https://www.facebook.com/adriangrspodcastclips" target="_blank" rel="noopener">
+              <div class="scLeft"><div class="scIcon"><img src="icons/facebook.png" alt="Facebook"></div><div class="scText"><p class="scTitle">Facebook</p><p class="scHandle">/adriangrspodcastclips</p></div></div>
+              <div class="scRight">↗</div>
+            </a>
+          </div>
+        </div>
+      </div>
 
-  <!-- 🍎 APPLE -->
-  <a class="card"
-     data-cat="apple"
-     data-name="MacBook Air 13 M1 (2020)"
-     data-brand="refurbished.ro"
-     href="https://refurbished.ro/products/apple-macbook-air-13-2020-refurbished-m1-8-core-7-core-gpu-silver?variant=49560743543114"
-     target="_blank" rel="nofollow noopener">
-    <div class="thumb">
-      <img src="https://refurbished.ro/cdn/shop/files/apple-macbook-air-13-2020-refurbished-m1-8-core-7-core-gpu-silver-518275.jpg" alt="MacBook Air 13 M1 (2020)" loading="lazy">
-    </div>
-    <div class="body">
-      <p class="h3">MacBook Air 13” M1 (2020)</p>
-      <p class="meta">Refurbished • Silver</p>
-      <div class="cta"><span class="tag">🍎 Apple</span><span class="go">Vezi ↗</span></div>
-    </div>
-  </a>
+      <div class="content">
+        <div class="chips" role="tablist" aria-label="Categorii">
+          <button class="chip active" type="button" data-filter="all">Toate</button>
+          <button class="chip" type="button" data-filter="gaming">🎮 Gaming</button>
+          <button class="chip" type="button" data-filter="apple">🍎 Apple Refurb</button>
+          <button class="chip" type="button" data-filter="shoes">👟 Încălțăminte</button>
+          <button class="chip" type="button" data-filter="medical">🏥 Medical</button>
+          <button class="chip" type="button" data-filter="watches">⌚ Ceasuri</button>
+          <button class="chip" type="button" data-filter="accessories">📱 Accesorii</button>
+          <button class="chip" type="button" data-filter="fashion">👜 Fashion</button>
+        </div>
 
-  <a class="card"
-     data-cat="apple"
-     data-name="MacBook Pro 14 M1 Pro (2021)"
-     data-brand="refurbished.ro"
-     href="https://refurbished.ro/products/apple-macbook-pro-14-2021-refurbished-m1-pro-8-core-14-core-gpu-space-gray?variant=50333585637706"
-     target="_blank" rel="nofollow noopener">
-    <div class="thumb">
-      <img src="https://refurbished.ro/cdn/shop/files/apple-macbook-pro-14-2021-refurbished-m1-pro-8-core-797403.jpg" alt="MacBook Pro 14 M1 Pro (2021)" loading="lazy">
-    </div>
-    <div class="body">
-      <p class="h3">MacBook Pro 14” M1 Pro</p>
-      <p class="meta">Refurbished • Space Gray</p>
-      <div class="cta"><span class="tag">🍎 Apple</span><span class="go">Vezi ↗</span></div>
-    </div>
-  </a>
+        <div class="grid" id="grid">
+          <!-- EXEMPLE: pune data-img cu poza produsului -->
+          <a class="card" href="https://refurbished.ro/products/apple-macbook-air-13-2020-refurbished-m1-8-core-7-core-gpu-silver?variant=49560743543114"
+             target="_blank" rel="nofollow noopener"
+             data-cat="apple"
+             data-img="">
+            <div class="thumb"><img alt="MacBook Air 13 2020 M1" loading="lazy"></div>
+            <div class="body">
+              <p class="h3">MacBook Air 13" (2020) — M1</p>
+              <p class="meta">Varianta Silver • refurbished.</p>
+              <div class="ctaRow"><span class="pill">🍎 Apple</span><span class="go">Vezi ↗</span></div>
+            </div>
+          </a>
 
-  <!-- 🎮 GAMING -->
-  <a class="card"
-     data-cat="gaming"
-     data-name="Controller HORI Wireless Onyx Plus (PS4)"
-     data-brand="jocurinoi.ro"
-     href="https://www.jocurinoi.ro/controller-hori-wireless-onyx-plus-ps4"
-     target="_blank" rel="nofollow noopener">
-    <div class="thumb">
-      <img src="https://www.jocurinoi.ro/image/cache/wp/ij/data/imported/controller-hori-wireless-onyx-plus-pc-26156/main.webp" alt="Controller HORI PS4" loading="lazy">
-    </div>
-    <div class="body">
-      <p class="h3">Controller HORI PS4</p>
-      <p class="meta">Wireless Onyx Plus</p>
-      <div class="cta"><span class="tag">🎮 Gaming</span><span class="go">Vezi ↗</span></div>
-    </div>
-  </a>
+          <!-- (Restul cardurilor le păstrezi la fel, doar adaugi data-img="URL_POZA") -->
+        </div>
+      </div>
 
-  <a class="card"
-     data-cat="gaming"
-     data-name="Dock încărcare PS5 (Dual Charging)"
-     data-brand="jocurinoi.ro"
-     href="https://www.jocurinoi.ro/spartan-gear-dual-charging-dock-station-ps5"
-     target="_blank" rel="nofollow noopener">
-    <div class="thumb">
-      <img src="https://www.jocurinoi.ro/image/cache/wp/ip/data/imported/spartan-gear-statie-dock-incarcare-dubla-ps5-28350/main.webp" alt="Dock încărcare PS5" loading="lazy">
+      <div class="footer">
+        ⚠️ Disclaimer: Linkuri de afiliere. Pot primi comision fără costuri suplimentare pentru tine.
+      </div>
     </div>
-    <div class="body">
-      <p class="h3">Dock încărcare PS5</p>
-      <p class="meta">Dual Charging Station</p>
-      <div class="cta"><span class="tag">🎮 Gaming</span><span class="go">Vezi ↗</span></div>
-    </div>
-  </a>
+  </div>
 
-  <!-- 📱 ACCESORII -->
-  <a class="card"
-     data-cat="accessories"
-     data-name="Powerbank Hama 10.000 mAh"
-     data-brand="jocurinoi.ro"
-     href="https://www.jocurinoi.ro/hama-powerbank-colour-10-10000mah-usb-cusb-a-telefoane"
-     target="_blank" rel="nofollow noopener">
-    <div class="thumb">
-      <img src="https://www.jocurinoi.ro/image/cache/wp/ij/products_imported/70289/main.webp" alt="Powerbank Hama 10.000 mAh" loading="lazy">
-    </div>
-    <div class="body">
-      <p class="h3">Powerbank Hama 10.000 mAh</p>
-      <p class="meta">USB-C / USB-A</p>
-      <div class="cta"><span class="tag">📱 Accesorii</span><span class="go">Vezi ↗</span></div>
-    </div>
-  </a>
+  <!-- Filters -->
+  <script>
+    const chips = document.querySelectorAll(".chip");
+    const cards = document.querySelectorAll("#grid .card");
 
-  <!-- 👟 ÎNCĂLȚĂMINTE -->
-  <a class="card"
-     data-cat="shoes"
-     data-name="Sneakers Pepe Jeans (alb)"
-     data-brand="otter.ro"
-     href="https://www.otter.ro/pantofi-sport-pepe-jeans-albi-ls60021-din-material-textil-si-piele-naturala"
-     target="_blank" rel="nofollow noopener">
-    <div class="thumb">
-      <img src="https://cdn.otter.ro/media/catalog/product/cache/0426d00bd1554e475c7fe0a52342803c/1/4/14f85ba95dad48d0fab34e2745eb94599d30e133b38eccc5d0f614eed7dd0b51.jpeg" alt="Sneakers Pepe Jeans" loading="lazy">
-    </div>
-    <div class="body">
-      <p class="h3">Sneakers Pepe Jeans</p>
-      <p class="meta">Textil + piele naturală</p>
-      <div class="cta"><span class="tag">👟 Încălțăminte</span><span class="go">Vezi ↗</span></div>
-    </div>
-  </a>
-
-  <!-- 🏥 MEDICAL -->
-  <a class="card"
-     data-cat="medical"
-     data-name="Collagenix fiole (30 buc)"
-     data-brand="pansiprod.ro"
-     href="https://pansiprod.ro/products/fiole-tonifiere-faciala-collagenix-30-bucati"
-     target="_blank" rel="nofollow noopener">
-    <div class="thumb">
-      <img src="https://pansiprod.ro/cdn/shop/products/main-canvas-63c013ae634cd31d9a1cc2f3.jpg" alt="Collagenix fiole" loading="lazy">
-    </div>
-    <div class="body">
-      <p class="h3">Collagenix fiole</p>
-      <p class="meta">30 buc • facial</p>
-      <div class="cta"><span class="tag">🏥 Medical</span><span class="go">Vezi ↗</span></div>
-    </div>
-  </a>
-
-  <!-- ⌚ CEASURI -->
-  <a class="card"
-     data-cat="watches"
-     data-name="Casio Vintage A700WEG-9A"
-     data-brand="watchshop.ro"
-     href="https://www.watchshop.ro/ceasuri-barbatesti/casio/vintage-a700weg-9a/"
-     target="_blank" rel="nofollow noopener">
-    <div class="thumb">
-      <img src="https://cdn.watchshop.ro/images/products/img_201902052353/139005/full/ceas-casio-retro-a700weg-9aef-308657.jpg" alt="Casio Vintage A700" loading="lazy">
-    </div>
-    <div class="body">
-      <p class="h3">Casio Vintage A700</p>
-      <p class="meta">Ceas bărbătesc</p>
-      <div class="cta"><span class="tag">⌚ Ceasuri</span><span class="go">Vezi ↗</span></div>
-    </div>
-  </a>
-
-  <!-- 👜 FASHION -->
-  <a class="card"
-     data-cat="fashion"
-     data-name="Portofel Karl Lagerfeld (Black)"
-     data-brand="watchshop.ro"
-     href="https://www.watchshop.ro/portofele-dama/karl-lagerfeld/226w3205-a999_black/"
-     target="_blank" rel="nofollow noopener">
-    <div class="thumb">
-      <img src="https://cdn.watchshop.ro/images/products/img_202111121617/249415/full/portofel-karl-lagerfeld-226w3205-a999_black-632941.jpg" alt="Portofel Karl Lagerfeld" loading="lazy">
-    </div>
-    <div class="body">
-      <p class="h3">Portofel Karl Lagerfeld</p>
-      <p class="meta">Fashion • damă</p>
-      <div class="cta"><span class="tag">👜 Fashion</span><span class="go">Vezi ↗</span></div>
-    </div>
-  </a>
-
-</div>
-</div>
-
-<script>
-  // ✅ Filter UI + GA4 events
-  const buttons = document.querySelectorAll(".filters button");
-  const cards = document.querySelectorAll(".card");
-
-  function applyFilter(filter){
-    cards.forEach(c => {
-      c.style.display = (filter === "all" || c.dataset.cat === filter) ? "" : "none";
-    });
-
-    // GA4: view_item_list + custom filter_select
-    gtag('event', 'filter_select', {
-      event_category: 'filter',
-      filter_name: filter
-    });
-
-    gtag('event', 'view_item_list', {
-      item_list_name: filter === 'all' ? 'All products' : `Category: ${filter}`
-    });
-  }
-
-  buttons.forEach(btn => {
-    btn.addEventListener("click", () => {
-      buttons.forEach(b => b.classList.remove("active"));
+    function setActive(btn){
+      chips.forEach(c => c.classList.remove("active"));
       btn.classList.add("active");
-      applyFilter(btn.dataset.filter);
+    }
+    function applyFilter(filter){
+      cards.forEach(card => {
+        const cat = card.getAttribute("data-cat");
+        card.style.display = (filter === "all" || cat === filter) ? "" : "none";
+      });
+    }
+    chips.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const f = btn.getAttribute("data-filter");
+        setActive(btn);
+        applyFilter(f);
+      });
     });
-  });
+  </script>
 
-  // ✅ Product click tracking
-  document.addEventListener('click', (e) => {
-    const a = e.target.closest('a.card');
-    if(!a) return;
-
-    const name = a.dataset.name || 'Unknown';
-    const brand = a.dataset.brand || 'Unknown';
-    const cat = a.dataset.cat || 'Unknown';
-    const url = a.href;
-
-    // GA4 recommended ecommerce-ish event
-    gtag('event', 'select_item', {
-      item_list_name: cat,
-      items: [{
-        item_name: name,
-        item_brand: brand,
-        item_category: cat,
-        item_id: url
-      }]
+  <!-- Auto-load images from data-img -->
+  <script>
+    document.querySelectorAll('.card[data-img]').forEach(card => {
+      const url = (card.getAttribute('data-img') || '').trim();
+      const img = card.querySelector('.thumb img');
+      if(!img) return;
+      if(url){
+        img.src = url;
+      } else {
+        // fallback elegant: ascunde thumbnail dacă nu există poză
+        card.querySelector('.thumb').style.display = 'none';
+      }
     });
+  </script>
 
-    // Extra outbound click
-    gtag('event', 'click_outbound', {
-      event_category: 'outbound',
-      event_label: url
-    });
-  });
-</script>
-
-<!-- ✅ 2Performant Link2 -->
-<script
-  src="https://cdn.2performant.com/l2/link2.js"
-  id="linkTwoPerformant"
-  data-id="l2/0/1/9/0/3/6/1/9/5/3"
-  data-api-host="https://cdn.2performant.com">
-</script>
+  <!-- ✅ 2Performant Link2 -->
+  <script
+    src="https://cdn.2performant.com/l2/link2.js"
+    id="linkTwoPerformant"
+    data-id="l2/0/1/9/0/3/6/1/9/5/3"
+    data-api-host="https://cdn.2performant.com">
+  </script>
 
 </body>
 </html>
