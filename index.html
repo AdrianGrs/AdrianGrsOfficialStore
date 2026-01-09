@@ -14,7 +14,7 @@
   <meta property="og:image" content="https://adriangrs.github.io/AdrianGrsOfficial/avatar.jpg" />
   <meta property="og:type" content="website" />
 
-  <!-- GA4 (safe init) -->
+  <!-- GA4 -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -24,10 +24,6 @@
     gtag('js', new Date());
     gtag('config', 'G-JGGRWDXT26', { anonymize_ip: true });
   </script>
-
-  <link rel="preconnect" href="https://img.2performant.com" crossorigin>
-  <link rel="dns-prefetch" href="//img.2performant.com">
-  <link rel="dns-prefetch" href="//event.2performant.com">
 
   <style>
     :root{
@@ -61,6 +57,7 @@
       overflow:hidden;
     }
 
+    /* HEADER */
     .header{
       display:grid;
       grid-template-columns:120px 1fr;
@@ -109,6 +106,7 @@
     .scHandle{margin:0;color:rgba(255,255,255,.75);font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
     .scRight{width:38px;height:38px;border-radius:14px;border:1px solid rgba(255,255,255,.14);background:rgba(0,0,0,.22);display:grid;place-items:center}
 
+    /* STORE */
     .content{padding:18px}
     .storeHeader{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;margin-bottom:14px}
     .storeTitle{margin:0;font-size:18px;font-weight:900;letter-spacing:-.01em}
@@ -183,14 +181,12 @@
       transition:transform .12s ease, border-color .12s ease, background .12s ease;
       box-shadow:0 16px 40px rgba(0,0,0,.25);
       display:flex;flex-direction:column;
-      min-height:220px;
+      min-height:190px;
     }
     .card:hover{transform:translateY(-1px);border-color:rgba(255,255,255,.22);background:rgba(255,255,255,.08)}
-    .thumb{width:100%;aspect-ratio:16/9;background:rgba(0,0,0,.25);display:block;overflow:hidden}
-    .thumb img{width:100%;height:100%;object-fit:cover;display:block}
-    .body{padding:12px 12px 14px 12px;display:flex;flex-direction:column;gap:8px;flex:1}
-    .h3{margin:0;font-size:14px;font-weight:900;line-height:1.25}
-    .meta{margin:0;font-size:12px;color:rgba(255,255,255,.72);line-height:1.35}
+    .body{padding:14px;display:flex;flex-direction:column;gap:10px;flex:1}
+    .h3{margin:0;font-size:15px;font-weight:900;line-height:1.25}
+    .meta{margin:0;font-size:12.5px;color:rgba(255,255,255,.72);line-height:1.35}
     .ctaRow{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:10px}
     .pill{font-size:11px;padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.12);background:rgba(0,0,0,.18);color:rgba(255,255,255,.80);white-space:nowrap}
     .go{font-weight:900;font-size:12px;opacity:.9}
@@ -268,14 +264,14 @@
           <h2 class="storeTitle">Oferte recomandate</h2>
         </div>
 
-        <!-- Featured -->
+        <!-- Featured (fără banner/poză) -->
         <div class="featured">
           <div>
             <div class="badge">🔥 Oferta zilei</div>
-            <p class="featuredH">Jocuri & console la reducere</p>
-            <p class="featuredP">Verifică oferta curentă.</p>
+            <p class="featuredH">Alege oferta principală</p>
+            <p class="featuredP">După ce îmi dai linkuri, o setăm aici.</p>
           </div>
-          <a class="btn" href="https://jocurinoi.ro" target="_blank" rel="nofollow noopener" data-ga="product" data-label="Featured|JocuriNoi">
+          <a class="btn" href="#" target="_blank" rel="nofollow noopener" data-ga="product" data-label="Featured|TBD">
             Vezi oferta ↗
           </a>
         </div>
@@ -288,63 +284,63 @@
           <button class="chip" type="button" data-filter="shoes">👟 Încălțăminte</button>
           <button class="chip" type="button" data-filter="medical">🏥 Medical</button>
           <button class="chip" type="button" data-filter="watches">⌚ Ceasuri</button>
+          <button class="chip" type="button" data-filter="accessories">📱 Accesorii</button>
         </div>
 
-        <!-- GRID (1 card / brand, fără duplicat vizual) -->
+        <!-- GRID (box-uri curate, fără bannere) -->
         <div class="grid" id="grid">
 
-          <a class="card" href="https://jocurinoi.ro" target="_blank" rel="nofollow noopener" data-cat="gaming" data-ga="product" data-label="Gaming|JocuriNoi">
-            <div class="thumb">
-              <img src="https://img.2performant.com/system/paperclip/banner_pictures/pics/264115/original/264115.jpeg" alt="JocuriNoi">
-            </div>
+          <!-- GAMING -->
+          <a class="card" href="#" target="_blank" rel="nofollow noopener" data-cat="gaming" data-ga="product" data-label="Gaming|TBD">
             <div class="body">
-              <p class="h3">JocuriNoi — Console & jocuri</p>
-              <p class="meta">PS5 / Xbox / Nintendo + jocuri.</p>
-              <div class="ctaRow"><span class="pill">🎮 Gaming</span><span class="go">Vezi oferta ↗</span></div>
+              <p class="h3">Gaming</p>
+              <p class="meta">Linkuri către console, jocuri, accesorii gaming.</p>
+              <div class="ctaRow"><span class="pill">🎮 Gaming</span><span class="go">Vezi ↗</span></div>
             </div>
           </a>
 
-          <a class="card" href="https://refurbished.ro" target="_blank" rel="nofollow noopener" data-cat="apple" data-ga="product" data-label="Apple|refurbished.ro">
-            <div class="thumb">
-              <img src="https://img.2performant.com/system/paperclip/banner_pictures/pics/246928/original/246928.png" alt="refurbished.ro">
-            </div>
+          <!-- APPLE -->
+          <a class="card" href="#" target="_blank" rel="nofollow noopener" data-cat="apple" data-ga="product" data-label="Apple|TBD">
             <div class="body">
-              <p class="h3">refurbished.ro — Apple Refurb</p>
-              <p class="meta">iPhone / MacBook / iPad, prețuri mai mici.</p>
-              <div class="ctaRow"><span class="pill">🍎 Apple</span><span class="go">Vezi oferta ↗</span></div>
+              <p class="h3">Apple Refurb</p>
+              <p class="meta">iPhone, MacBook, iPad — oferte selectate.</p>
+              <div class="ctaRow"><span class="pill">🍎 Apple</span><span class="go">Vezi ↗</span></div>
             </div>
           </a>
 
-          <a class="card" href="https://otter.ro" target="_blank" rel="nofollow noopener" data-cat="shoes" data-ga="product" data-label="Shoes|Otter">
-            <div class="thumb">
-              <img src="https://img.2performant.com/system/paperclip/banner_pictures/pics/263966/original/263966.png" alt="Otter">
-            </div>
+          <!-- SHOES -->
+          <a class="card" href="#" target="_blank" rel="nofollow noopener" data-cat="shoes" data-ga="product" data-label="Shoes|TBD">
             <div class="body">
-              <p class="h3">Otter — Încălțăminte</p>
-              <p class="meta">Colecții și reduceri (în funcție de stoc).</p>
-              <div class="ctaRow"><span class="pill">👟 Încălțăminte</span><span class="go">Vezi oferta ↗</span></div>
+              <p class="h3">Încălțăminte</p>
+              <p class="meta">Oferte la încălțăminte (bărbați / femei).</p>
+              <div class="ctaRow"><span class="pill">👟 Încălțăminte</span><span class="go">Vezi ↗</span></div>
             </div>
           </a>
 
-          <a class="card" href="https://pansiprod.ro" target="_blank" rel="nofollow noopener" data-cat="medical" data-ga="product" data-label="Medical|Pansiprod">
-            <div class="thumb">
-              <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1200&q=60" alt="Pansiprod">
-            </div>
+          <!-- ACCESSORIES -->
+          <a class="card" href="#" target="_blank" rel="nofollow noopener" data-cat="accessories" data-ga="product" data-label="Accesorii|TBD">
             <div class="body">
-              <p class="h3">Pansiprod — Medical</p>
-              <p class="meta">Produse utile pentru casă și familie.</p>
-              <div class="ctaRow"><span class="pill">🏥 Medical</span><span class="go">Vezi oferta ↗</span></div>
+              <p class="h3">Accesorii</p>
+              <p class="meta">Huse, încărcătoare, cabluri, gadgeturi utile.</p>
+              <div class="ctaRow"><span class="pill">📱 Accesorii</span><span class="go">Vezi ↗</span></div>
             </div>
           </a>
 
-          <a class="card" href="https://watchshop.ro" target="_blank" rel="nofollow noopener" data-cat="watches" data-ga="product" data-label="Ceasuri|Watchshop">
-            <div class="thumb">
-              <img src="https://img.2performant.com/system/paperclip/banner_pictures/pics/222134/original/222134.jpg" alt="Watchshop">
-            </div>
+          <!-- MEDICAL -->
+          <a class="card" href="#" target="_blank" rel="nofollow noopener" data-cat="medical" data-ga="product" data-label="Medical|TBD">
             <div class="body">
-              <p class="h3">Watchshop — Ceasuri</p>
-              <p class="meta">Modele pentru cadou sau daily.</p>
-              <div class="ctaRow"><span class="pill">⌚ Ceasuri</span><span class="go">Vezi oferta ↗</span></div>
+              <p class="h3">Medical</p>
+              <p class="meta">Produse utile pentru acasă și familie.</p>
+              <div class="ctaRow"><span class="pill">🏥 Medical</span><span class="go">Vezi ↗</span></div>
+            </div>
+          </a>
+
+          <!-- WATCHES -->
+          <a class="card" href="#" target="_blank" rel="nofollow noopener" data-cat="watches" data-ga="product" data-label="Ceasuri|TBD">
+            <div class="body">
+              <p class="h3">Ceasuri</p>
+              <p class="meta">Ceasuri pentru cadou sau daily.</p>
+              <div class="ctaRow"><span class="pill">⌚ Ceasuri</span><span class="go">Vezi ↗</span></div>
             </div>
           </a>
 
@@ -370,4 +366,45 @@
 
     function applyFilter(filter){
       cards.forEach(card => {
-        const cat = card.getAttribute("
+        const cat = card.getAttribute("data-cat");
+        const show = (filter === "all") || (cat === filter);
+        card.style.display = show ? "" : "none";
+      });
+    }
+
+    chips.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const f = btn.getAttribute("data-filter");
+        setActive(btn);
+        applyFilter(f);
+      });
+    });
+  </script>
+
+  <!-- GA tracking for clicks -->
+  <script>
+    document.addEventListener("click", function(e){
+      const a = e.target.closest("a");
+      if(!a) return;
+
+      const gaType = a.getAttribute("data-ga");
+      if(!gaType) return;
+
+      gtag('event', 'click', {
+        event_category: gaType,
+        event_label: a.getAttribute("data-label") || a.href,
+        transport_type: 'beacon'
+      });
+    });
+  </script>
+
+  <!-- ✅ 2Performant Link2 (pune data-id-ul tău REAL) -->
+  <script
+    src="https://cdn.2performant.com/l2/link2.js"
+    id="linkTwoPerformant"
+    data-id="l2/0/1/9/0/3/6/1/9/5/3"
+    data-api-host="https://cdn.2performant.com">
+  </script>
+
+</body>
+</html>
