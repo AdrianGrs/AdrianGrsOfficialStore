@@ -4,21 +4,15 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>AdrianGrsOfficial — Oferte</title>
-  <meta name="description" content="Mini store afiliat: oferte selectate + linkuri oficiale AdrianGrsOfficial." />
+  <meta name="description" content="Oferte selectate + linkuri oficiale AdrianGrsOfficial." />
   <meta name="theme-color" content="#070911" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="AdrianGrsOfficial — Oferte" />
-  <meta property="og:description" content="Mini store afiliat: oferte selectate + linkuri oficiale." />
+  <meta property="og:description" content="Oferte selectate + linkuri oficiale." />
   <meta property="og:url" content="https://adriangrs.github.io/AdrianGrsOfficial/" />
   <meta property="og:image" content="https://adriangrs.github.io/AdrianGrsOfficial/avatar.jpg" />
   <meta property="og:type" content="website" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="AdrianGrsOfficial — Oferte" />
-  <meta name="twitter:description" content="Mini store afiliat: oferte selectate + linkuri oficiale." />
-  <meta name="twitter:image" content="https://adriangrs.github.io/AdrianGrsOfficial/avatar.jpg" />
 
   <!-- GA4 (safe init) -->
   <script>
@@ -42,11 +36,6 @@
       --text:#f2f4ff;
       --muted:rgba(255,255,255,.70);
       --shadow:0 24px 80px rgba(0,0,0,.55);
-      --accent1:#a855f7;
-      --accent2:#22d3ee;
-      --card:rgba(255,255,255,.06);
-      --card2:rgba(255,255,255,.08);
-      --r:28px;
     }
     *{box-sizing:border-box}
     html,body{height:100%}
@@ -72,7 +61,6 @@
       overflow:hidden;
     }
 
-    /* HEADER */
     .header{
       display:grid;
       grid-template-columns:120px 1fr;
@@ -90,18 +78,11 @@
       background:#000;
       box-shadow:0 18px 60px rgba(0,0,0,.55);
     }
-    .avatar img{
-      width:100%;height:100%;
-      object-fit:cover;
-      display:block;
-      filter:grayscale(100%);
-      transform:scale(1.02);
-    }
+    .avatar img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(100%);transform:scale(1.02)}
     .title{display:flex;flex-direction:column;gap:10px;min-width:0}
     .name{font-size:28px;font-weight:900;letter-spacing:-.02em;margin:0}
-    .sub{margin:0;color:var(--muted);font-size:14px;line-height:1.4}
+    .sub{margin:0;color:rgba(255,255,255,.70);font-size:14px;line-height:1.4}
 
-    /* Social */
     .socialGrid{
       display:grid;
       grid-template-columns:repeat(2, minmax(0,1fr));
@@ -128,34 +109,9 @@
     .scHandle{margin:0;color:rgba(255,255,255,.75);font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
     .scRight{width:38px;height:38px;border-radius:14px;border:1px solid rgba(255,255,255,.14);background:rgba(0,0,0,.22);display:grid;place-items:center}
 
-    /* Store */
     .content{padding:18px}
-    .storeHeader{
-      display:flex;
-      align-items:flex-end;
-      justify-content:space-between;
-      gap:14px;
-      margin-bottom:14px;
-    }
+    .storeHeader{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;margin-bottom:14px}
     .storeTitle{margin:0;font-size:18px;font-weight:900;letter-spacing:-.01em}
-
-    .chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 16px 0}
-    .chip{
-      border:1px solid rgba(255,255,255,.12);
-      background:rgba(0,0,0,.20);
-      color:rgba(255,255,255,.84);
-      padding:8px 10px;
-      border-radius:999px;
-      font-size:12px;
-      cursor:pointer;
-      user-select:none;
-      transition:transform .12s ease, border-color .12s ease, background .12s ease;
-    }
-    .chip:hover{transform:translateY(-1px);border-color:rgba(255,255,255,.22);background:rgba(255,255,255,.06)}
-    .chip.active{
-      border-color:rgba(34,211,238,.60);
-      background:rgba(34,211,238,.10);
-    }
 
     .featured{
       border:1px solid rgba(255,255,255,.14);
@@ -172,7 +128,6 @@
       margin-bottom:16px;
       box-shadow:0 18px 60px rgba(0,0,0,.35);
     }
-    .featuredLeft{min-width:0}
     .badge{
       display:inline-flex;align-items:center;gap:8px;
       padding:7px 10px;border-radius:999px;
@@ -198,9 +153,22 @@
       transition:transform .12s ease, background .12s ease, border-color .12s ease;
     }
     .btn:hover{transform:translateY(-1px);border-color:rgba(255,255,255,.22);background:rgba(255,255,255,.10)}
-    .btn span{opacity:.9}
 
-    /* ✅ grid auto-fit = nu mai rămâne spațiu gol când sunt puține carduri */
+    .chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 16px 0}
+    .chip{
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(0,0,0,.20);
+      color:rgba(255,255,255,.84);
+      padding:8px 10px;
+      border-radius:999px;
+      font-size:12px;
+      cursor:pointer;
+      user-select:none;
+      transition:transform .12s ease, border-color .12s ease, background .12s ease;
+    }
+    .chip:hover{transform:translateY(-1px);border-color:rgba(255,255,255,.22);background:rgba(255,255,255,.06)}
+    .chip.active{border-color:rgba(34,211,238,.60);background:rgba(34,211,238,.10)}
+
     .grid{
       display:grid;
       grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
@@ -218,27 +186,13 @@
       min-height:220px;
     }
     .card:hover{transform:translateY(-1px);border-color:rgba(255,255,255,.22);background:rgba(255,255,255,.08)}
-    .thumb{
-      width:100%;
-      aspect-ratio: 16/9;
-      background:rgba(0,0,0,.25);
-      display:block;
-      overflow:hidden;
-    }
+    .thumb{width:100%;aspect-ratio:16/9;background:rgba(0,0,0,.25);display:block;overflow:hidden}
     .thumb img{width:100%;height:100%;object-fit:cover;display:block}
     .body{padding:12px 12px 14px 12px;display:flex;flex-direction:column;gap:8px;flex:1}
     .h3{margin:0;font-size:14px;font-weight:900;line-height:1.25}
     .meta{margin:0;font-size:12px;color:rgba(255,255,255,.72);line-height:1.35}
     .ctaRow{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:10px}
-    .pill{
-      font-size:11px;
-      padding:6px 10px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.12);
-      background:rgba(0,0,0,.18);
-      color:rgba(255,255,255,.80);
-      white-space:nowrap;
-    }
+    .pill{font-size:11px;padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.12);background:rgba(0,0,0,.18);color:rgba(255,255,255,.80);white-space:nowrap}
     .go{font-weight:900;font-size:12px;opacity:.9}
 
     .footer{
@@ -250,16 +204,6 @@
       line-height:1.4;
     }
 
-    /* focus */
-    .socialCard:focus-visible, .card:focus-visible, .btn:focus-visible, .chip:focus-visible{
-      outline:2px solid rgba(34,211,238,.65);
-      outline-offset:3px;
-    }
-    @media (prefers-reduced-motion: reduce){
-      .socialCard,.card,.btn,.chip{transition:none}
-    }
-
-    /* MOBILE */
     @media (max-width:720px){
       .header{grid-template-columns:86px 1fr}
       .avatar{width:78px;height:78px;border-radius:22px}
@@ -277,9 +221,7 @@
     <div class="shell">
 
       <div class="header">
-        <div class="avatar">
-          <img src="avatar.jpg" alt="AdrianGrsOfficial" />
-        </div>
+        <div class="avatar"><img src="avatar.jpg" alt="AdrianGrsOfficial" /></div>
 
         <div class="title">
           <h1 class="name">AdrianGrsOfficial</h1>
@@ -289,10 +231,7 @@
             <a class="socialCard" href="https://www.tiktok.com/@adriangrs1" target="_blank" rel="noopener" data-ga="social" data-label="TikTok">
               <div class="scLeft">
                 <div class="scIcon"><img src="icons/tiktok.png" alt="TikTok"></div>
-                <div class="scText">
-                  <p class="scTitle">TikTok</p>
-                  <p class="scHandle">@adriangrs1</p>
-                </div>
+                <div class="scText"><p class="scTitle">TikTok</p><p class="scHandle">@adriangrs1</p></div>
               </div>
               <div class="scRight">↗</div>
             </a>
@@ -300,10 +239,7 @@
             <a class="socialCard" href="https://www.youtube.com/@AdrianGrsOfficial" target="_blank" rel="noopener" data-ga="social" data-label="YouTube">
               <div class="scLeft">
                 <div class="scIcon"><img src="icons/youtube.png" alt="YouTube"></div>
-                <div class="scText">
-                  <p class="scTitle">YouTube</p>
-                  <p class="scHandle">@AdrianGrsOfficial</p>
-                </div>
+                <div class="scText"><p class="scTitle">YouTube</p><p class="scHandle">@AdrianGrsOfficial</p></div>
               </div>
               <div class="scRight">↗</div>
             </a>
@@ -311,10 +247,7 @@
             <a class="socialCard" href="https://www.instagram.com/adriangrsofficial/" target="_blank" rel="noopener" data-ga="social" data-label="Instagram">
               <div class="scLeft">
                 <div class="scIcon"><img src="icons/instagram.png" alt="Instagram"></div>
-                <div class="scText">
-                  <p class="scTitle">Instagram</p>
-                  <p class="scHandle">@adriangrsofficial</p>
-                </div>
+                <div class="scText"><p class="scTitle">Instagram</p><p class="scHandle">@adriangrsofficial</p></div>
               </div>
               <div class="scRight">↗</div>
             </a>
@@ -322,10 +255,7 @@
             <a class="socialCard" href="https://www.facebook.com/adriangrspodcastclips" target="_blank" rel="noopener" data-ga="social" data-label="Facebook">
               <div class="scLeft">
                 <div class="scIcon"><img src="icons/facebook.png" alt="Facebook"></div>
-                <div class="scText">
-                  <p class="scTitle">Facebook</p>
-                  <p class="scHandle">/adriangrspodcastclips</p>
-                </div>
+                <div class="scText"><p class="scTitle">Facebook</p><p class="scHandle">/adriangrspodcastclips</p></div>
               </div>
               <div class="scRight">↗</div>
             </a>
@@ -338,15 +268,15 @@
           <h2 class="storeTitle">Oferte recomandate</h2>
         </div>
 
-        <!-- Featured (editezi tu linkul + textul) -->
+        <!-- Featured -->
         <div class="featured">
-          <div class="featuredLeft">
+          <div>
             <div class="badge">🔥 Oferta zilei</div>
-            <p class="featuredH">Gaming: reduceri la console & jocuri</p>
-            <p class="featuredP">Intră pe ofertă și vezi prețurile actuale.</p>
+            <p class="featuredH">Jocuri & console la reducere</p>
+            <p class="featuredP">Verifică oferta curentă.</p>
           </div>
           <a class="btn" href="https://jocurinoi.ro" target="_blank" rel="nofollow noopener" data-ga="product" data-label="Featured|JocuriNoi">
-            Vezi oferta <span>↗</span>
+            Vezi oferta ↗
           </a>
         </div>
 
@@ -355,114 +285,66 @@
           <button class="chip active" type="button" data-filter="all">Toate</button>
           <button class="chip" type="button" data-filter="gaming">🎮 Gaming</button>
           <button class="chip" type="button" data-filter="apple">🍎 Apple Refurb</button>
-          <button class="chip" type="button" data-filter="accessories">📱 Accesorii</button>
+          <button class="chip" type="button" data-filter="shoes">👟 Încălțăminte</button>
           <button class="chip" type="button" data-filter="medical">🏥 Medical</button>
           <button class="chip" type="button" data-filter="watches">⌚ Ceasuri</button>
         </div>
 
-        <!-- GRID PRINCIPAL (aici îmi dai linkuri și îți pun eu produsele) -->
+        <!-- GRID (1 card / brand, fără duplicat vizual) -->
         <div class="grid" id="grid">
 
-          <!-- GAMING -->
-          <a class="card" href="https://jocurinoi.ro" target="_blank" rel="nofollow noopener" data-cat="gaming" data-ga="product" data-label="Gaming|JocuriNoi|Home">
+          <a class="card" href="https://jocurinoi.ro" target="_blank" rel="nofollow noopener" data-cat="gaming" data-ga="product" data-label="Gaming|JocuriNoi">
             <div class="thumb">
               <img src="https://img.2performant.com/system/paperclip/banner_pictures/pics/264115/original/264115.jpeg" alt="JocuriNoi">
             </div>
             <div class="body">
               <p class="h3">JocuriNoi — Console & jocuri</p>
-              <p class="meta">Oferte la PS5 / Xbox / Nintendo + jocuri.</p>
-              <div class="ctaRow">
-                <span class="pill">🎮 Gaming</span>
-                <span class="go">Vezi oferta ↗</span>
-              </div>
+              <p class="meta">PS5 / Xbox / Nintendo + jocuri.</p>
+              <div class="ctaRow"><span class="pill">🎮 Gaming</span><span class="go">Vezi oferta ↗</span></div>
             </div>
           </a>
 
-          <a class="card" href="https://jocurinoi.ro/jocuri" target="_blank" rel="nofollow noopener" data-cat="gaming" data-ga="product" data-label="Gaming|JocuriNoi|Jocuri">
-            <div class="thumb">
-              <img src="https://img.2performant.com/system/paperclip/banner_pictures/pics/264115/original/264115.jpeg" alt="JocuriNoi">
-            </div>
-            <div class="body">
-              <p class="h3">JocuriNoi — Jocuri la reducere</p>
-              <p class="meta">Intră pe listă și prinde prețuri bune.</p>
-              <div class="ctaRow">
-                <span class="pill">🔥 Reduceri</span>
-                <span class="go">Vezi oferta ↗</span>
-              </div>
-            </div>
-          </a>
-
-          <!-- APPLE REFURB -->
-          <a class="card" href="https://refurbished.ro" target="_blank" rel="nofollow noopener" data-cat="apple" data-ga="product" data-label="Apple|Refurbished|Home">
+          <a class="card" href="https://refurbished.ro" target="_blank" rel="nofollow noopener" data-cat="apple" data-ga="product" data-label="Apple|refurbished.ro">
             <div class="thumb">
               <img src="https://img.2performant.com/system/paperclip/banner_pictures/pics/246928/original/246928.png" alt="refurbished.ro">
             </div>
             <div class="body">
               <p class="h3">refurbished.ro — Apple Refurb</p>
               <p class="meta">iPhone / MacBook / iPad, prețuri mai mici.</p>
-              <div class="ctaRow">
-                <span class="pill">🍎 Apple</span>
-                <span class="go">Vezi oferta ↗</span>
-              </div>
+              <div class="ctaRow"><span class="pill">🍎 Apple</span><span class="go">Vezi oferta ↗</span></div>
             </div>
           </a>
 
-          <a class="card" href="https://refurbished.ro/iphone" target="_blank" rel="nofollow noopener" data-cat="apple" data-ga="product" data-label="Apple|Refurbished|iPhone">
-            <div class="thumb">
-              <img src="https://img.2performant.com/system/paperclip/banner_pictures/pics/246928/original/246928.png" alt="iPhone refurbished">
-            </div>
-            <div class="body">
-              <p class="h3">iPhone Refurbished</p>
-              <p class="meta">Modele populare, stocuri variabile.</p>
-              <div class="ctaRow">
-                <span class="pill">📱 iPhone</span>
-                <span class="go">Vezi oferta ↗</span>
-              </div>
-            </div>
-          </a>
-
-          <!-- ACCESSORIES -->
-          <a class="card" href="https://otter.ro" target="_blank" rel="nofollow noopener" data-cat="accessories" data-ga="product" data-label="Accesorii|Otter|Home">
+          <a class="card" href="https://otter.ro" target="_blank" rel="nofollow noopener" data-cat="shoes" data-ga="product" data-label="Shoes|Otter">
             <div class="thumb">
               <img src="https://img.2performant.com/system/paperclip/banner_pictures/pics/263966/original/263966.png" alt="Otter">
             </div>
             <div class="body">
-              <p class="h3">Otter — Huse & accesorii</p>
-              <p class="meta">Huse premium, protecție serioasă.</p>
-              <div class="ctaRow">
-                <span class="pill">📱 Accesorii</span>
-                <span class="go">Vezi oferta ↗</span>
-              </div>
+              <p class="h3">Otter — Încălțăminte</p>
+              <p class="meta">Colecții și reduceri (în funcție de stoc).</p>
+              <div class="ctaRow"><span class="pill">👟 Încălțăminte</span><span class="go">Vezi oferta ↗</span></div>
             </div>
           </a>
 
-          <!-- MEDICAL -->
-          <a class="card" href="https://pansiprod.ro" target="_blank" rel="nofollow noopener" data-cat="medical" data-ga="product" data-label="Medical|Pansiprod|Home">
+          <a class="card" href="https://pansiprod.ro" target="_blank" rel="nofollow noopener" data-cat="medical" data-ga="product" data-label="Medical|Pansiprod">
             <div class="thumb">
               <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1200&q=60" alt="Pansiprod">
             </div>
             <div class="body">
-              <p class="h3">Pansiprod — Medical & farmaceutice</p>
-              <p class="meta">Produse utile pentru acasă și familie.</p>
-              <div class="ctaRow">
-                <span class="pill">🏥 Medical</span>
-                <span class="go">Vezi oferta ↗</span>
-              </div>
+              <p class="h3">Pansiprod — Medical</p>
+              <p class="meta">Produse utile pentru casă și familie.</p>
+              <div class="ctaRow"><span class="pill">🏥 Medical</span><span class="go">Vezi oferta ↗</span></div>
             </div>
           </a>
 
-          <!-- WATCHES -->
-          <a class="card" href="https://watchshop.ro" target="_blank" rel="nofollow noopener" data-cat="watches" data-ga="product" data-label="Ceasuri|Watchshop|Home">
+          <a class="card" href="https://watchshop.ro" target="_blank" rel="nofollow noopener" data-cat="watches" data-ga="product" data-label="Ceasuri|Watchshop">
             <div class="thumb">
               <img src="https://img.2performant.com/system/paperclip/banner_pictures/pics/222134/original/222134.jpg" alt="Watchshop">
             </div>
             <div class="body">
               <p class="h3">Watchshop — Ceasuri</p>
               <p class="meta">Modele pentru cadou sau daily.</p>
-              <div class="ctaRow">
-                <span class="pill">⌚ Ceasuri</span>
-                <span class="go">Vezi oferta ↗</span>
-              </div>
+              <div class="ctaRow"><span class="pill">⌚ Ceasuri</span><span class="go">Vezi oferta ↗</span></div>
             </div>
           </a>
 
@@ -488,45 +370,4 @@
 
     function applyFilter(filter){
       cards.forEach(card => {
-        const cat = card.getAttribute("data-cat");
-        const show = (filter === "all") || (cat === filter);
-        card.style.display = show ? "" : "none";
-      });
-    }
-
-    chips.forEach(btn => {
-      btn.addEventListener("click", () => {
-        const f = btn.getAttribute("data-filter");
-        setActive(btn);
-        applyFilter(f);
-      });
-    });
-  </script>
-
-  <!-- GA tracking for clicks -->
-  <script>
-    document.addEventListener("click", function(e){
-      const a = e.target.closest("a");
-      if(!a) return;
-
-      const gaType = a.getAttribute("data-ga");
-      if(!gaType) return;
-
-      gtag('event', 'click', {
-        event_category: gaType,
-        event_label: a.getAttribute("data-label") || a.href,
-        transport_type: 'beacon'
-      });
-    });
-  </script>
-
-  <!-- ✅ 2Performant Link2 (pune aici data-id-ul tău REAL din "Copy Link2 Embed Code") -->
-  <script
-    src="https://cdn.2performant.com/l2/link2.js"
-    id="linkTwoPerformant"
-    data-id="l2/0/1/9/0/3/6/1/9/5/3"
-    data-api-host="https://cdn.2performant.com">
-  </script>
-
-</body>
-</html>
+        const cat = card.getAttribute("
