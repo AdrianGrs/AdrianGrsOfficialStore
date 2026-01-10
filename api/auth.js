@@ -1,1 +1,2 @@
-export { auth as default } from '@openlab/vercel-netlify-cms-github';
+import { auth } from '@openlab/vercel-netlify-cms-github';
+export default function handler(req, res) { return auth(req, res); }
