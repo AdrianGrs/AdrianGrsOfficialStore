@@ -2,16 +2,14 @@ backend:
   name: github
   repo: AdrianGrs/AdrianGrsOfficialStore
   branch: main
-  base_url: https://adrian-grs-official-store.vercel.app
+  base_url: https://adriangrsofficial.vercel.app
   auth_endpoint: /api/auth
 
-site_url: https://adrian-grs-official-store.vercel.app
-display_url: https://adrian-grs-official-store.vercel.app
+site_url: https://adriangrsofficial.vercel.app
+display_url: https://adriangrsofficial.vercel.app
 
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
-media_library:
-  name: uploadcare
 
 collections:
   - name: "products"
