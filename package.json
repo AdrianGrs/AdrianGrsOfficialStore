@@ -1,0 +1,8 @@
+{
+  "name": "adrian-grs-official-store",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@openlab/vercel-netlify-cms-github": "^1.0.0"
+  }
+}
