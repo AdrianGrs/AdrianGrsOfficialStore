@@ -1,4 +1,5 @@
-import { callback } from "@openlab/vercel-netlify-cms-github";
-export default function handler(req, res) {
+const { callback } = require("@openlab/vercel-netlify-cms-github");
+
+module.exports = (req, res) => {
   return callback(req, res);
-}
+};
