@@ -5,51 +5,20 @@ backend:
   base_url: https://adrian-grs-official-store.vercel.app
   auth_endpoint: api/auth
 
-media_folder: "assets/uploads"
-public_folder: "/assets/uploads"
+site_url: https://adrian-grs-official-store.vercel.app
+display_url: https://adrian-grs-official-store.vercel.app
+
+media_folder: "content/uploads"
+public_folder: "/content/uploads"
 
 collections:
-  - name: products
-    label: Produse
-    folder: content/products
+  - name: "products"
+    label: "Products"
+    folder: "content/products"
     create: true
-    slug: "{{slug}}"
-    format: json
+    format: "json"
     fields:
-      - label: Titlu
-        name: title
-        widget: string
-      - label: Descriere
-        name: meta
-        widget: string
-        required: false
-      - label: Categorie
-        name: category
-        widget: select
-        options:
-          - apple
-          - gaming
-          - accessories
-          - shoes
-          - beauty
-          - watches
-          - fashion
-          - amazon
-      - label: Tag
-        name: tag
-        widget: string
-        required: false
-      - label: Brand
-        name: brand
-        widget: string
-        required: false
-      - label: Link afiliat
-        name: url
-        widget: string
-      - label: Poză
-        name: image
-        widget: image
-      - label: Mic (small)
-        name: small
-        widget: boolean
-        default: false
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "URL", name: "url", widget: "string" }
+      - { label: "Image", name: "image", widget: "string" }
+      - { label: "Small", name: "small", widget: "boolean", default: false }
