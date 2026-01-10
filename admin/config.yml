@@ -8,9 +8,8 @@ backend:
 site_url: https://adrian-grs-official-store.vercel.app
 display_url: https://adrian-grs-official-store.vercel.app
 
-media_folder: "content/uploads"
-public_folder: "/content/uploads"
-
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
 media_library:
   name: uploadcare
 
