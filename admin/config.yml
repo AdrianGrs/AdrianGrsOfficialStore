@@ -1,0 +1,33 @@
+backend:
+  name: github
+  repo: OWNER/REPO
+  branch: main
+  base_url: https://YOUR-OAUTH-PROVIDER.vercel.app
+  auth_endpoint: /auth
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "products"
+    label: "Produse"
+    format: "json"
+    extension: "json"
+    file: "content/products.json"
+    fields:
+      - label: "Produse"
+        name: "items"
+        widget: "list"
+        summary: "{{fields.title}} ({{fields.category}})"
+        fields:
+          - { label: "Titlu", name: "title", widget: "string" }
+          - { label: "Descriere", name: "meta", widget: "string", required: false }
+          - label: "Categorie"
+            name: "category"
+            widget: "select"
+            options: ["apple","gaming","accessories","shoes","beauty","watches","fashion","amazon"]
+          - { label: "Tag (emoji/text)", name: "tag", widget: "string", required: false }
+          - { label: "Brand", name: "brand", widget: "string", required: false }
+          - { label: "Link afiliat", name: "url", widget: "string" }
+          - { label: "Poză (URL sau upload)", name: "image", widget: "image" }
+          - { label: "Mic (small)", name: "small", widget: "boolean", default: false }
