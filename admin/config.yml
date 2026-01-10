@@ -3,13 +3,16 @@ backend:
   repo: AdrianGrs/AdrianGrsOfficialStore
   branch: main
   base_url: https://adrian-grs-official-store.vercel.app
-  auth_endpoint: api/auth
+  auth_endpoint: /api/auth
 
 site_url: https://adrian-grs-official-store.vercel.app
 display_url: https://adrian-grs-official-store.vercel.app
 
 media_folder: "content/uploads"
 public_folder: "/content/uploads"
+
+media_library:
+  name: uploadcare
 
 collections:
   - name: "products"
